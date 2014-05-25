@@ -92,7 +92,22 @@ int main( int argc, char* argv[] )
 
 		cout << endl;
 
-		ifstream file(realPath);
+		string ext = Arc_FileExtension(realPath);
+
+		string typeString = "";
+		ios::openmode mode = ios::in;
+
+		if (ext == "html")
+		{
+			typeString = "text/html";
+		}
+		else if (ext == "jpg" || ext == "jpeg")
+		{
+			typeString = "text/jpeg";
+			mode |= ios::binary;
+		}
+
+		ifstream file(realPath, mode);
 
 		if ( ! file)
 		{
@@ -100,71 +115,70 @@ int main( int argc, char* argv[] )
 			cout << "HTTP/1.0 404 Not Found\r\n";
 			log << "S: " << "HTTP/1.0 404 Not Found\r\n";
 
-			pClient->sendString("Content-Size: 0\r\n", false);
-			cout << "Content-Size: 0\r\n";
-			log << "S: " << "Content-Size: 0\r\n";
-
-			pClient->sendString("\r\n", false);
-			cout << "\r\n";
-			log << "S: " << "\r\n";
+			file.close();
+			file.open("html/404.html");
 		}
 		else
 		{
 			pClient->sendString("HTTP/1.0 200 OK\r\n", false);
 			cout << "HTTP/1.0 200 OK\r\n";
 			log << "S: " << "HTTP/1.0 200 OK\r\n";
-			pClient->sendString("Content-Type: text/html\r\n", false);
-			cout << "Content-Type: text/html\r\n";
-			log << "S: " << "Content-Type: text/html\r\n";
-			pClient->sendString("Server: Coeus 0.1\r\n", false);
-			cout << "Server: Coeus 0.1\r\n";
-			log << "S: " << "Server: Coeus 0.1\r\n";
-
-			stringstream location;
-			location << "Location: http://" << headers["host"] << path << "\r\n";
-			pClient->sendString(location.str());
-			cout << location.str();
-			log << "S: " << location.str();
-
-			std::streampos fsize;
-			fsize = file.tellg();
-			file.seekg(0, std::ios::end);
-			fsize = file.tellg() - fsize;
-			file.seekg(0, std::ios::beg);
-
-			stringstream contentSize;
-			contentSize << "Content-Size: " << fsize << "\r\n";
-			pClient->sendString(contentSize.str(), false);
-			cout << contentSize.str();
-			log << "S: " << contentSize.str();
-
-			pClient->sendString("\r\n", false);
-			cout << "\r\n";
-			log << "S: " << "\r\n";
-
-			const int TMP_BUFFER_SIZE = 4096;
-
-			log << "S: ";
-			char tmp_buffer[TMP_BUFFER_SIZE];
-			std::streamsize n;
-			do
-			{
-				file.read(tmp_buffer, TMP_BUFFER_SIZE);
-				n = file.gcount();
-
-				if (n == 0)
-					break;
-
-				pClient->sendBuffer(tmp_buffer, (unsigned int)n);
-				log.write(tmp_buffer, (unsigned int)n);
-
-				if ( ! file )
-					break;
-			}
-			while (n > 0);
-
-			log.flush();
 		}
+
+		stringstream contentType;
+		contentType << "Content-Type: " << typeString << "\r\n";
+		pClient->sendString(contentType.str(), false);
+		cout << contentType.str();
+		log << "S: " << contentType.str();
+
+		pClient->sendString("Server: Coeus 0.1\r\n", false);
+		cout << "Server: Coeus 0.1\r\n";
+		log << "S: " << "Server: Coeus 0.1\r\n";
+
+		stringstream location;
+		location << "Location: http://" << headers["host"] << path << "\r\n";
+		pClient->sendString(location.str());
+		cout << location.str();
+		log << "S: " << location.str();
+
+		std::streampos fsize;
+		fsize = file.tellg();
+		file.seekg(0, std::ios::end);
+		fsize = file.tellg() - fsize;
+		file.seekg(0, std::ios::beg);
+
+		stringstream contentSize;
+		contentSize << "Content-Size: " << fsize << "\r\n";
+		pClient->sendString(contentSize.str(), false);
+		cout << contentSize.str();
+		log << "S: " << contentSize.str();
+
+		pClient->sendString("\r\n", false);
+		cout << "\r\n";
+		log << "S: " << "\r\n";
+
+		const int TMP_BUFFER_SIZE = 4096;
+
+		log << "S: ";
+		char tmp_buffer[TMP_BUFFER_SIZE];
+		std::streamsize n;
+		do
+		{
+			file.read(tmp_buffer, TMP_BUFFER_SIZE);
+			n = file.gcount();
+
+			if (n == 0)
+				break;
+
+			pClient->sendBuffer(tmp_buffer, (unsigned int)n);
+			log.write(tmp_buffer, (unsigned int)n);
+
+			if ( ! file )
+				break;
+		}
+		while (n > 0);
+
+		log.flush();
 
 		pClient->disconnect();
 		delete pClient;
