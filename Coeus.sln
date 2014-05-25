@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WebServer", "WebServer\WebServer.vcxproj", "{11AA871B-A93C-40CF-8044-B9730D72007E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77F950CE-F3FC-4F50-B509-F4A624CF8303}.Debug|Win32.ActiveCfg = Debug|Win32
+		{77F950CE-F3FC-4F50-B509-F4A624CF8303}.Debug|Win32.Build.0 = Debug|Win32
+		{77F950CE-F3FC-4F50-B509-F4A624CF8303}.Release|Win32.ActiveCfg = Release|Win32
+		{77F950CE-F3FC-4F50-B509-F4A624CF8303}.Release|Win32.Build.0 = Release|Win32
+		{11AA871B-A93C-40CF-8044-B9730D72007E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{11AA871B-A93C-40CF-8044-B9730D72007E}.Debug|Win32.Build.0 = Debug|Win32
+		{11AA871B-A93C-40CF-8044-B9730D72007E}.Release|Win32.ActiveCfg = Release|Win32
+		{11AA871B-A93C-40CF-8044-B9730D72007E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
