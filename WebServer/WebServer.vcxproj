@@ -66,6 +66,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ServerConfig.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="conf\main.cfg" />
+    <None Include="conf\mime.cfg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ServerConfig.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

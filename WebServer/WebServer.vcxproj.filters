@@ -4,10 +4,25 @@
     <Filter Include="Project">
       <UniqueIdentifier>{ef12687d-4f09-400a-b624-7de150623ad5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Project\Config">
+      <UniqueIdentifier>{c884f740-e02a-4c61-8fbe-642f1c40dad4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Project</Filter>
     </ClCompile>
+    <ClCompile Include="ServerConfig.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="conf\mime.cfg">
+      <Filter>Project\Config</Filter>
+    </None>
+    <None Include="conf\main.cfg">
+      <Filter>Project\Config</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ServerConfig.h" />
   </ItemGroup>
 </Project>
