@@ -6,6 +6,10 @@
 #include <Arc/ServerSocket.h>
 #include <Arc/Socket.h>
 
+#include <Arc/Log.h>
+
+#include "ServerConfig.h"
+
 using namespace std;
 using namespace Arc;
 
@@ -14,33 +18,41 @@ int main( int argc, char* argv[] )
 	Arc_InitCore();
 	Arc_InitNet();
 
-	const int PORT = 8080;
+	Log::AddInfoOutput("stdout", false);
+	Log::AddErrorOutput("stderr", false);
+	Log::AddInfoOutput("logs/info.log");
+	Log::AddErrorOutput("logs/error.log");
+
+	const string& ENDLINE = "\r\n";
+
+	ServerConfig conf;
+	conf.loadMainConfig("conf/main.cfg");
+	conf.loadMIMETypes("conf/mime.cfg");
 
 	ServerSocket ss = ServerSocket();
-	ss.bindLocal(PORT, SOCKET_TYPE_TCP);
+	ss.bindLocal(conf.getPort(), SOCKET_TYPE_TCP);
 
 	if (ss.hasError())
 	{
-		cout << "Server failed to initialize" << endl;
+		Log::Error("Main", "Server failed to initialize");
+		ss.disconnect();
+		return 1;
 	}
 
-	cout << "Server listening on port " << PORT << endl;
-
-	ofstream log("http.log");
+	Log::InfoFmt("Main", "Server listening on port %d", conf.getPort());
 
 	while (true)
 	{
 		Socket* pClient = ss.acceptClient();
-		cout << "Connection from " << pClient->getAddress().toString() << endl;
-		log << "I: Connection from " << pClient->getAddress().toString() << endl;
+		Log::InfoFmt("Main", "S: Connection from %s", pClient->getAddress().toString().c_str());
 
 		string request = pClient->recvLine();
-		log << "C: " << request << endl;
+		Log::InfoFmt("Main", "C: Request: %s", request.c_str());
 		ArrayList<string> requestPieces = Arc_StringSplit(request, ' ');
 
 		if (requestPieces.getSize() < 3)
 		{
-			cout << "Error: Malformed Request" << endl;
+			Log::Error("Main", "Malformed Request");
 			pClient->disconnect();
 			delete pClient;
 			continue;
@@ -50,27 +62,23 @@ int main( int argc, char* argv[] )
 		string path = requestPieces[1];
 		string version = requestPieces[2];
 
-		cout << "Method: " << method << endl;
-		cout << "Path: " << path << endl;
-		cout << "Version: " << version << endl;
-
-		cout << "Headers: " << endl;
+		Log::InfoFmt("Main", "C: Method: %s", method.c_str());
+		Log::InfoFmt("Main", "C: Path: %s", path.c_str());
+		Log::InfoFmt("Main", "C: Version: %s", version.c_str());
 
 		Map<string, string> headers;
 		string line;
 		while (true)
 		{
 			line = pClient->recvLine();
-			log << "C: " << line << endl;
-
 			if (line == "") break;
 
-			cout << line << endl;
+			Log::InfoFmt("Main", "C: Header: %s", line.c_str());
 
 			ArrayList<string> split = Arc_StringSplit(line, ':', 2);
 			if (split.getSize() < 2)
 			{
-				cout << "Error: Malformed Header" << endl;
+				Log::Error("Main", "Malformed Header");
 				continue;
 			}
 			Arc_TrimRight(split[0]);
@@ -80,30 +88,22 @@ int main( int argc, char* argv[] )
 			headers.add(split[0], split[1]);
 		}
 
-		cout << "Read " << headers.getSize() << " Headers" << endl;
+		Log::InfoFmt("Main", "S: Read %d Headers", headers.getSize());
 
 		// Web Root
-		string realPath = "html" + path;
+		string realPath = conf.getWebRoot() + path;
 
 		if (realPath.back() == '/')
 		{
 			realPath.append("index.html");
 		}
 
-		cout << endl;
-
 		string ext = Arc_FileExtension(realPath);
-
-		string typeString = "";
+		string typeString = conf.getMIMEType(ext);
 		ios::openmode mode = ios::in;
 
-		if (ext == "html")
+		if (typeString.substr(0, 5) == "image")
 		{
-			typeString = "text/html";
-		}
-		else if (ext == "jpg" || ext == "jpeg")
-		{
-			typeString = "text/jpeg";
 			mode |= ios::binary;
 		}
 
@@ -111,55 +111,50 @@ int main( int argc, char* argv[] )
 
 		if ( ! file)
 		{
-			pClient->sendString("HTTP/1.0 404 Not Found\r\n", false);
-			cout << "HTTP/1.0 404 Not Found\r\n";
-			log << "S: " << "HTTP/1.0 404 Not Found\r\n";
+			const string& response = "HTTP/1.0 404 Not Found";
+			pClient->sendString(response + ENDLINE, false);
+			Log::InfoFmt("Main", "S: Response: %s", response.c_str());
 
 			file.close();
-			file.open("html/404.html");
+			file.open(conf.getWebRoot() + "/" + conf.getErrorPage404());
 		}
 		else
 		{
-			pClient->sendString("HTTP/1.0 200 OK\r\n", false);
-			cout << "HTTP/1.0 200 OK\r\n";
-			log << "S: " << "HTTP/1.0 200 OK\r\n";
+			const string& response = "HTTP/1.0 200 OK";
+			pClient->sendString(response + ENDLINE, false);
+			Log::InfoFmt("Main", "S: Response: %s", response.c_str());
 		}
 
-		stringstream contentType;
-		contentType << "Content-Type: " << typeString << "\r\n";
-		pClient->sendString(contentType.str(), false);
-		cout << contentType.str();
-		log << "S: " << contentType.str();
+		stringstream contentTypeHeader;
+		contentTypeHeader << "Content-Type: " << typeString;
+		pClient->sendString(contentTypeHeader.str() + ENDLINE, false);
+		Log::InfoFmt("Main", "S: %s", contentTypeHeader.str().c_str());
 
-		pClient->sendString("Server: Coeus 0.1\r\n", false);
-		cout << "Server: Coeus 0.1\r\n";
-		log << "S: " << "Server: Coeus 0.1\r\n";
+		const string& serverHeader = "Server: Coeus 0.1";
+		pClient->sendString(serverHeader + ENDLINE, false);
+		Log::InfoFmt("Main", "S: %s", serverHeader.c_str());
 
-		stringstream location;
-		location << "Location: http://" << headers["host"] << path << "\r\n";
-		pClient->sendString(location.str());
-		cout << location.str();
-		log << "S: " << location.str();
+		stringstream locationHeader;
+		locationHeader << "Location: http://" << headers["host"] << path;
+		pClient->sendString(locationHeader.str() + ENDLINE);
+		Log::InfoFmt("Main", "S: %s", locationHeader.str().c_str());
 
+		// Get file size
 		std::streampos fsize;
 		fsize = file.tellg();
 		file.seekg(0, std::ios::end);
 		fsize = file.tellg() - fsize;
 		file.seekg(0, std::ios::beg);
 
-		stringstream contentSize;
-		contentSize << "Content-Size: " << fsize << "\r\n";
-		pClient->sendString(contentSize.str(), false);
-		cout << contentSize.str();
-		log << "S: " << contentSize.str();
+		stringstream contentSizeHeader;
+		contentSizeHeader << "Content-Size: " << fsize;
+		pClient->sendString(contentSizeHeader.str() + ENDLINE, false);
+		Log::InfoFmt("Main", "S: %s", contentSizeHeader.str().c_str());
 
-		pClient->sendString("\r\n", false);
-		cout << "\r\n";
-		log << "S: " << "\r\n";
+		pClient->sendString(ENDLINE, false);
 
 		const int TMP_BUFFER_SIZE = 4096;
 
-		log << "S: ";
 		char tmp_buffer[TMP_BUFFER_SIZE];
 		std::streamsize n;
 		do
@@ -171,20 +166,17 @@ int main( int argc, char* argv[] )
 				break;
 
 			pClient->sendBuffer(tmp_buffer, (unsigned int)n);
-			log.write(tmp_buffer, (unsigned int)n);
 
 			if ( ! file )
 				break;
 		}
 		while (n > 0);
 
-		log.flush();
-
 		pClient->disconnect();
 		delete pClient;
 	}
 
-	log.close();
+	Log::CloseOutputs();
 
 	Arc_TermNet();
 
