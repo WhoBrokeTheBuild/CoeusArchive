@@ -1,0 +1,107 @@
+SQL Types
+
+MySQL
+=======================
+
+CHAR (max 255)
+VARCHAR (max 255)
+TEXT (max 65,535)
+BLOB (max 65,535)
+TINYINT (1 byte)
+SMALLINT (2 bytes)
+MEDIUMINT (6 bytes)
+INT (4 bytes)
+BIGINT (8 bytes)
+FLOAT?
+DOUBLE?
+DECIMAL?
+ENUM?
+SET?
+DATE YYYY-MM-DD
+DATETIME YYYY-MM-DD HH:MM:SS
+TIMESTAMP Unix Time
+TIME HH:MM:SS
+YEAR YYYY
+
+MSSQL
+=======================
+Text (max 255)
+Byte (1 byte)
+Int (2 bytes)
+Long (4 bytes)
+Single/Float (4 bytes)
+Double (8 bytes)
+Date/Time (8 bytes)
+Bool (1 bit)
+Blob (up to 1gb)
+
+CSQL
+=======================
+1 char - fixed length
+2 varchar - variable length
+3 text - long varchar
+4 bool - on or off bit
+5 tinyint - 1 byte
+6 int - 4 bytes
+7 float - 4 bytes
+8 double - 8 bytes
+9 timestamp - unix time 4 bytes
+10 date - 2 bytes [DDDD|MMMM|YYYY|YYYY] <- bits
+11 time - 3 bytes [HHHH|MMMM|SSSS|MSMS|MSMS|MSMS] <- bits
+12 datetime - 7 bytes
+
+
+
+databases/
+> test_db
+
+test_db/
+> users.cdb
+
+users.cdb
+=======================
+[bytes]
+[3] CDB <- first three bytes of the file
+[4] Num Fields
+{ Repeat for each field
+  [max 64] Field Name
+  [2] Type ID
+  = For char, varchar, & text =
+  [4] Length
+  = =
+  = For tinyint, & int =
+  [1] Auto Increment
+  = =
+  [x] Default
+}
+[4] Primary Key (Index of field)
+[8] Num Rows
+{ Repeat for each row 
+  { Repeat for each field
+    [x] Data
+  }
+}
+
+
+
+
+
+CREATE TABLE `test` (
+  `id` INT AUTO_INCREMENT,
+  `name` VARCHAR(64) DEFAULT 'John Doe',
+  `time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY_KEY(`id`)
+)
+
+SELECT * FROM `test` WHERE `id` = '4';
+SELECT * FROM `test` WHERE `name` != 'John Doe';
+SELECT `id`, `name` FROM `test` WHERE `time` > TIMESTAMP('2014-05-01 00:00:00');
+
+=
+!=
+>=
+<=
+LIKE 
+LIKE %...%
+NOT LIKE
+IN ('item1', 'item2', 3)
