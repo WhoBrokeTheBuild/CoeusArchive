@@ -121,23 +121,25 @@ string ServerConfig::getMIMEType( const string& extension ) const
 
 string ServerConfig::cleanWhitespace( const string& str )
 {
+	string copy = Arc_GetTrim(str);
+
 	string newStr;
 	int whitespaceStart = -1;
-	for (unsigned int i = 0; i < str.length(); ++i)
+	for (unsigned int i = 0; i < copy.length(); ++i)
 	{
-		if (str[i] == ' ' || str[i] == '\t')
+		if (copy[i] == ' ' || copy[i] == '\t')
 		{
 			if (whitespaceStart == -1)
 			{
 				newStr += ' ';
 				whitespaceStart = i;
 			}
-			else
-				if (i != str.length() -1 && str[i + 1] != ' ' && str[i + 1] != '\t')
-					whitespaceStart = -1;
+
+			if (i != copy.length() - 1 && copy[i + 1] != ' ' && copy[i + 1] != '\t')
+				whitespaceStart = -1;
 		}
 		else
-			newStr += str[i];
+			newStr += copy[i];
 	}
 
 	return newStr;
