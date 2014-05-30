@@ -17,6 +17,7 @@ Server::Server( void )
 
 Server::~Server( void )
 {
+	Log::Info(getClassName(), "Shutting down");
 	delete mp_ServerConfig;
 
 	if (mp_CurrClient)
@@ -30,8 +31,6 @@ Server::~Server( void )
 
 bool Server::run( void )
 {
-	const string& ENDLINE = "\r\n";
-
 	mp_ServerSocket = New ServerSocket();
 	mp_ServerSocket->bindLocal(mp_ServerConfig->getPort(), SOCKET_TYPE_TCP);
 

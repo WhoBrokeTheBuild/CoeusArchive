@@ -1,0 +1,131 @@
++0.0.0.146 INF <server.cpp:46> Server: Listening on port 8080
++0.0.5.399 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.5.436 INF <server.cpp:179> Server: C: GET /test.html HTTP/1.1
++0.0.5.445 INF <server.cpp:146> Server: C: Host: localhost:8080
++0.0.5.449 INF <server.cpp:146> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.5.460 INF <server.cpp:146> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.5.473 INF <server.cpp:146> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.5.479 INF <server.cpp:146> Server: C: Accept-Encoding: gzip, deflate
++0.0.5.485 INF <server.cpp:146> Server: C: Referer: http://localhost:8080/
++0.0.5.493 INF <server.cpp:146> Server: C: Connection: keep-alive
++0.0.5.495 INF <server.cpp:161> Server: Read 7 Headers
++0.0.5.504 INF <server.cpp:200> Server: S: HTTP/1.0 200 OK
++0.0.5.506 INF <server.cpp:200> Server: S: Content-Type: text/html
++0.0.5.510 INF <server.cpp:200> Server: S: Server: Coeus 0.2
++0.0.5.513 INF <server.cpp:200> Server: S: Location: http://localhost:8080/test.html
++0.0.5.521 INF <server.cpp:200> Server: S: Content-Size: 182
++0.0.5.524 INF <server.cpp:129> Server: Sending File: <html/test.html>
++0.0.5.587 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.5.620 INF <server.cpp:179> Server: C: GET /cat.jpg HTTP/1.1
++0.0.5.625 INF <server.cpp:146> Server: C: Host: localhost:8080
++0.0.5.627 INF <server.cpp:146> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.5.633 INF <server.cpp:146> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.5.638 INF <server.cpp:146> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.5.643 INF <server.cpp:146> Server: C: Accept-Encoding: gzip, deflate
++0.0.5.646 INF <server.cpp:146> Server: C: Referer: http://localhost:8080/test.html
++0.0.5.651 INF <server.cpp:146> Server: C: Connection: keep-alive
++0.0.5.657 INF <server.cpp:161> Server: Read 7 Headers
++0.0.5.659 INF <server.cpp:200> Server: S: HTTP/1.0 200 OK
++0.0.5.663 INF <server.cpp:200> Server: S: Content-Type: image/jpeg
++0.0.5.666 INF <server.cpp:200> Server: S: Server: Coeus 0.2
++0.0.5.670 INF <server.cpp:200> Server: S: Location: http://localhost:8080/cat.jpg
++0.0.5.676 INF <server.cpp:200> Server: S: Content-Size: 10547
++0.0.5.678 INF <server.cpp:129> Server: Sending File: <html/cat.jpg>
++0.0.5.684 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.5.690 INF <server.cpp:179> Server: C: GET /cat.png HTTP/1.1
++0.0.5.693 INF <server.cpp:146> Server: C: Host: localhost:8080
++0.0.5.697 INF <server.cpp:146> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.5.708 INF <server.cpp:146> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.5.712 INF <server.cpp:146> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.5.717 INF <server.cpp:146> Server: C: Accept-Encoding: gzip, deflate
++0.0.5.721 INF <server.cpp:146> Server: C: Referer: http://localhost:8080/test.html
++0.0.5.725 INF <server.cpp:146> Server: C: Connection: keep-alive
++0.0.5.729 INF <server.cpp:161> Server: Read 7 Headers
++0.0.5.731 INF <server.cpp:200> Server: S: HTTP/1.0 200 OK
++0.0.5.735 INF <server.cpp:200> Server: S: Content-Type: image/png
++0.0.5.737 INF <server.cpp:200> Server: S: Server: Coeus 0.2
++0.0.5.741 INF <server.cpp:200> Server: S: Location: http://localhost:8080/cat.png
++0.0.5.744 INF <server.cpp:200> Server: S: Content-Size: 440374
++0.0.5.749 INF <server.cpp:129> Server: Sending File: <html/cat.png>
++0.0.5.758 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.5.763 INF <server.cpp:179> Server: C: GET /cat.gif HTTP/1.1
++0.0.5.769 INF <server.cpp:146> Server: C: Host: localhost:8080
++0.0.5.776 INF <server.cpp:146> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.5.787 INF <server.cpp:146> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.5.791 INF <server.cpp:146> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.5.795 INF <server.cpp:146> Server: C: Accept-Encoding: gzip, deflate
++0.0.5.798 INF <server.cpp:146> Server: C: Referer: http://localhost:8080/test.html
++0.0.5.803 INF <server.cpp:146> Server: C: Connection: keep-alive
++0.0.5.807 INF <server.cpp:161> Server: Read 7 Headers
++0.0.5.809 INF <server.cpp:200> Server: S: HTTP/1.0 200 OK
++0.0.5.811 INF <server.cpp:200> Server: S: Content-Type: image/gif
++0.0.5.815 INF <server.cpp:200> Server: S: Server: Coeus 0.2
++0.0.5.817 INF <server.cpp:200> Server: S: Location: http://localhost:8080/cat.gif
++0.0.5.822 INF <server.cpp:200> Server: S: Content-Size: 1047852
++0.0.5.826 INF <server.cpp:129> Server: Sending File: <html/cat.gif>
++0.0.0.107 INF <server.cpp:47> Server: Listening on port 8080
++0.0.0.127 INF <server.cpp:47> Server: Listening on port 8080
++0.0.1.508 INF <server.cpp:52> Server: Connection from IP Address [127.0.0.1]
++0.0.1.514 INF <server.cpp:180> Server: C: GET /test.html HTTP/1.1
++0.0.1.521 INF <server.cpp:147> Server: C: Host: localhost:8080
++0.0.1.525 INF <server.cpp:147> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.1.536 INF <server.cpp:147> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.1.544 INF <server.cpp:147> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.1.549 INF <server.cpp:147> Server: C: Accept-Encoding: gzip, deflate
++0.0.1.554 INF <server.cpp:147> Server: C: Referer: http://localhost:8080/
++0.0.1.557 INF <server.cpp:147> Server: C: Connection: keep-alive
++0.0.1.559 INF <server.cpp:162> Server: Read 7 Headers
++0.0.1.562 INF <server.cpp:201> Server: S: HTTP/1.0 200 OK
++0.0.1.572 INF <server.cpp:201> Server: S: Content-Type: text/html
++0.0.1.576 INF <server.cpp:201> Server: S: Server: Coeus 0.2
++0.0.1.577 INF <server.cpp:201> Server: S: Location: http://localhost:8080/test.html
++0.0.1.584 INF <server.cpp:201> Server: S: Content-Size: 182
++0.0.1.587 INF <server.cpp:130> Server: Sending File: <html/test.html>
++0.0.1.651 INF <server.cpp:52> Server: Connection from IP Address [127.0.0.1]
++0.0.1.661 INF <server.cpp:180> Server: C: GET /cat.jpg HTTP/1.1
++0.0.1.668 INF <server.cpp:147> Server: C: Host: localhost:8080
++0.0.1.673 INF <server.cpp:147> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.1.687 INF <server.cpp:147> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.1.692 INF <server.cpp:147> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.1.697 INF <server.cpp:147> Server: C: Accept-Encoding: gzip, deflate
++0.0.1.702 INF <server.cpp:147> Server: C: Referer: http://localhost:8080/test.html
++0.0.1.707 INF <server.cpp:147> Server: C: Connection: keep-alive
++0.0.1.710 INF <server.cpp:162> Server: Read 7 Headers
++0.0.1.714 INF <server.cpp:201> Server: S: HTTP/1.0 200 OK
++0.0.1.719 INF <server.cpp:201> Server: S: Content-Type: image/jpeg
++0.0.1.724 INF <server.cpp:201> Server: S: Server: Coeus 0.2
++0.0.1.727 INF <server.cpp:201> Server: S: Location: http://localhost:8080/cat.jpg
++0.0.1.730 INF <server.cpp:201> Server: S: Content-Size: 10547
++0.0.1.735 INF <server.cpp:130> Server: Sending File: <html/cat.jpg>
++0.0.1.741 INF <server.cpp:52> Server: Connection from IP Address [127.0.0.1]
++0.0.1.746 INF <server.cpp:180> Server: C: GET /cat.png HTTP/1.1
++0.0.1.750 INF <server.cpp:147> Server: C: Host: localhost:8080
++0.0.1.755 INF <server.cpp:147> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.1.765 INF <server.cpp:147> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.1.771 INF <server.cpp:147> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.1.780 INF <server.cpp:147> Server: C: Accept-Encoding: gzip, deflate
++0.0.1.784 INF <server.cpp:147> Server: C: Referer: http://localhost:8080/test.html
++0.0.1.791 INF <server.cpp:147> Server: C: Connection: keep-alive
++0.0.1.794 INF <server.cpp:162> Server: Read 7 Headers
++0.0.1.797 INF <server.cpp:201> Server: S: HTTP/1.0 200 OK
++0.0.1.799 INF <server.cpp:201> Server: S: Content-Type: image/png
++0.0.1.803 INF <server.cpp:201> Server: S: Server: Coeus 0.2
++0.0.1.804 INF <server.cpp:201> Server: S: Location: http://localhost:8080/cat.png
++0.0.1.809 INF <server.cpp:201> Server: S: Content-Size: 440374
++0.0.1.812 INF <server.cpp:130> Server: Sending File: <html/cat.png>
++0.0.1.822 INF <server.cpp:52> Server: Connection from IP Address [127.0.0.1]
++0.0.1.826 INF <server.cpp:180> Server: C: GET /cat.gif HTTP/1.1
++0.0.1.830 INF <server.cpp:147> Server: C: Host: localhost:8080
++0.0.1.832 INF <server.cpp:147> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.1.840 INF <server.cpp:147> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.1.845 INF <server.cpp:147> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.1.849 INF <server.cpp:147> Server: C: Accept-Encoding: gzip, deflate
++0.0.1.852 INF <server.cpp:147> Server: C: Referer: http://localhost:8080/test.html
++0.0.1.855 INF <server.cpp:147> Server: C: Connection: keep-alive
++0.0.1.858 INF <server.cpp:162> Server: Read 7 Headers
++0.0.1.862 INF <server.cpp:201> Server: S: HTTP/1.0 200 OK
++0.0.1.865 INF <server.cpp:201> Server: S: Content-Type: image/gif
++0.0.1.868 INF <server.cpp:201> Server: S: Server: Coeus 0.2
++0.0.1.872 INF <server.cpp:201> Server: S: Location: http://localhost:8080/cat.gif
++0.0.1.876 INF <server.cpp:201> Server: S: Content-Size: 1047852
++0.0.1.878 INF <server.cpp:130> Server: Sending File: <html/cat.gif>

@@ -4,6 +4,9 @@
     <Filter Include="Project">
       <UniqueIdentifier>{88d03060-55de-4049-bcbc-a0bf22e13118}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Project\db">
+      <UniqueIdentifier>{b74610e1-2679-48d4-93d5-ef33e42cd1ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
