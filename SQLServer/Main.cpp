@@ -8,6 +8,8 @@
 using namespace std;
 using namespace Arc;
 
+ArrayList<string> VALID_COMMANDS = ArrayList<string>();
+
 ArrayList<string> cleanAndSplitStatement( const string& str )
 {
 	bool inSingleQuotes = false;
@@ -17,6 +19,8 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 
 	ArrayList<string> pieces;
 	pieces.add("");
+
+	string fromLastSpace = "";
 
 	bool inStartingWhitespace = true;
 
@@ -40,6 +44,7 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 			if (ch != '\\')
 			{
 				pieces.getBack() += ch;
+				fromLastSpace += ch;
 				continue;
 			}
 		}
@@ -52,6 +57,7 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 			{
 				inSingleQuotes = false;
 				pieces.getBack() += ch;
+				fromLastSpace += ch;
 				continue;
 			}
 		}
@@ -61,6 +67,7 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 			{
 				inDoubleQuotes = false;
 				pieces.getBack() += ch;
+				fromLastSpace += ch;
 				continue;
 			}
 		}
@@ -70,6 +77,7 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 			{
 				inBackQuotes = false;
 				pieces.getBack() += ch;
+				fromLastSpace += ch;
 				continue;
 			}
 		}
@@ -94,14 +102,23 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 				if (prev == ' ' || prev == '\t')
 					continue;
 
-				pieces.add("");
+				if (VALID_COMMANDS.contains(fromLastSpace))
+					pieces.add("");
+				else
+					pieces.getBack() += ch;
+
+				fromLastSpace = "";
 			}
 			else
+			{
 				pieces.getBack() += tolower(ch);
+				fromLastSpace += tolower(ch);
+			}
 		}
 		else
 		{
 			pieces.getBack() += ch;
+			fromLastSpace += ch;
 		}
 	}
 
@@ -180,6 +197,19 @@ int main( int argc, char* argv[] )
 	Log::AddErrorOutput("stderr", false);
 	Log::AddInfoOutput("logs/info.log");
 	Log::AddErrorOutput("logs/error.log");
+
+	VALID_COMMANDS.add("select");
+	VALID_COMMANDS.add("from");
+	VALID_COMMANDS.add("where");
+	VALID_COMMANDS.add("or");
+	VALID_COMMANDS.add("and");
+	VALID_COMMANDS.add("not");
+	VALID_COMMANDS.add("update");
+	VALID_COMMANDS.add("create");
+	VALID_COMMANDS.add("delete");
+	VALID_COMMANDS.add("show");
+	VALID_COMMANDS.add("use");
+	VALID_COMMANDS.add("exit");
 
 	runConsole();
 
