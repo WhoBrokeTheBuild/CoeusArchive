@@ -7,12 +7,20 @@
     <Filter Include="Project\Config">
       <UniqueIdentifier>{c884f740-e02a-4c61-8fbe-642f1c40dad4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Project\Util">
+      <UniqueIdentifier>{d63db666-99aa-41ac-99ef-4914870f3ac4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Project</Filter>
     </ClCompile>
-    <ClCompile Include="ServerConfig.cpp" />
+    <ClCompile Include="ServerConfig.cpp">
+      <Filter>Project\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>Project</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="conf\mime.cfg">
@@ -23,6 +31,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ServerConfig.h" />
+    <ClInclude Include="ServerConfig.h">
+      <Filter>Project\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Server.h">
+      <Filter>Project</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
