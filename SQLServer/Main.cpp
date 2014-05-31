@@ -6,6 +6,7 @@
 #include <Arc/Buffer.h>
 
 #include <Arc/Log.h>
+#include <Arc/FileFunctions.h>
 
 using namespace std;
 using namespace Arc;
@@ -13,16 +14,46 @@ using namespace Arc;
 ArrayList<string> VALID_COMMANDS = ArrayList<string>();
 string DB_ROOT = "db/";
 
+string current_db = "";
+
+bool table_exists( const string& name )
+{
+	return true;
+}
+
+bool create_table( const string& name )
+{
+	if (current_db == "")
+	{
+		// error
+		return false;
+	}
+
+	Buffer buff;
+	buff.appendChar('C');
+	buff.appendChar('D');
+	buff.appendChar('B');
+
+	buff.appendInt(0); // Number of fields
+	buff.appendInt(UINT_MAX); // No Primary Key
+
+	buff.appendLong(0);
+
+	ofstream table(DB_ROOT + current_db + "/" + name + ".cdb", ios::out | ios::binary);
+	buff.writeToStream(table);
+	table.close();
+
+	return true;
+}
+
 bool database_exists( const string& name )
 {
-	ifstream db(DB_ROOT + name + ".cdb");
-
-	return db;
+	return true;
 }
 
 bool create_database( const string& name )
 {
-	CreateDirectory((DB_ROOT + name).c_str());
+	return Arc_CreateDir(DB_ROOT + name);
 }
 
 string stripQuotes( const string& str )
@@ -142,7 +173,6 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 
 					pieces.add(fromLastSpace);
 					pieces.add("");
-					continue;
 				}
 				else
 					pieces.getBack() += ch;
@@ -174,8 +204,6 @@ bool processStatement( string& rawStmt )
 
 	if (stmt.isEmpty())
 		return false;
-	for (unsigned int i = 0; i < stmt.getSize(); ++i)
-		printf("%s\r\n", stmt[i].c_str());
 
 	const string& cmd = stmt[0];
 
@@ -184,6 +212,11 @@ bool processStatement( string& rawStmt )
 
 	if (cmd == "select")
 	{
+
+	}
+	else if (cmd == "insert")
+	{
+
 	}
 	else if (cmd == "update")
 	{
@@ -193,7 +226,8 @@ bool processStatement( string& rawStmt )
 	{
 		if (stmt.getSize() < 3)
 		{
-			printf("Error: Malformed Command");
+			printf("Error: Malformed Command\r\n");
+			return false;
 		}
 
 		const string& what = stmt[1];
@@ -202,6 +236,12 @@ bool processStatement( string& rawStmt )
 		if (what == "database")
 		{
 			create_database(name);
+			printf("Database `%s` created\r\n", name.c_str());
+		}
+		else if (what == "table")
+		{
+			create_table(name);
+			printf("Table `%s`.`%s` created\r\n", current_db.c_str(), name.c_str());
 		}
 	}
 	else if (cmd == "delete")
@@ -214,7 +254,23 @@ bool processStatement( string& rawStmt )
 	}
 	else if (cmd == "use")
 	{
+		if (stmt.getSize() < 2)
+		{
+			printf("Error: Malformed Command\r\n");
+			return false;
+		}
 
+		const string& name = stripQuotes(stmt[1]);
+
+		if (database_exists(name))
+		{
+			current_db = name;
+			printf("Database changed to `%s`\r\n", name.c_str());
+		}
+		else
+		{
+			// error
+		}
 	}
 	else if (cmd == "exit")
 	{
@@ -229,13 +285,41 @@ void runConsole( void )
 	printf("Coeus SQL Server\r\n");
 
 	string line;
+	string statement = "";
 	bool shouldExit = false;
 	while ( ! shouldExit)
 	{
-		printf("> ");
+		if (statement.length() == 0)
+			printf("> ");
+		else
+			printf(">> ");
 		getline(cin, line);
 
-		shouldExit = processStatement(line);
+		string tmpLine = line;
+		Arc_StringToLower(tmpLine);
+		if (tmpLine == "exit")
+			line += ';';
+
+		size_t endOfStmt = line.find(';');
+
+		if (endOfStmt == string::npos)
+		{
+			statement += line + ' ';
+			continue;
+		}
+
+		do
+		{
+			statement += line + ' ';
+
+			line = line.substr(0, endOfStmt);
+			endOfStmt = line.find(';');
+
+			shouldExit = processStatement(statement);
+			statement = "";
+		}
+		while (endOfStmt != string::npos);
+
 	}
 }
 
@@ -249,6 +333,8 @@ int main( int argc, char* argv[] )
 	Log::AddInfoOutput("logs/info.log");
 	Log::AddErrorOutput("logs/error.log");
 
+	VALID_COMMANDS.add("insert");
+	VALID_COMMANDS.add("into");
 	VALID_COMMANDS.add("select");
 	VALID_COMMANDS.add("from");
 	VALID_COMMANDS.add("where");
@@ -265,6 +351,7 @@ int main( int argc, char* argv[] )
 	VALID_COMMANDS.add("table");
 	VALID_COMMANDS.add("tables");
 	VALID_COMMANDS.add("exit");
+	VALID_COMMANDS.add("alter");
 
 	runConsole();
 
