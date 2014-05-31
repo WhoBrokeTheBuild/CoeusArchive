@@ -1,7 +1,9 @@
 #include <iostream>
+#include <fstream>
 
 #include <Arc/ArcCore.h>
 #include <Arc/ArcNet.h>
+#include <Arc/Buffer.h>
 
 #include <Arc/Log.h>
 
@@ -9,6 +11,35 @@ using namespace std;
 using namespace Arc;
 
 ArrayList<string> VALID_COMMANDS = ArrayList<string>();
+string DB_ROOT = "db/";
+
+bool database_exists( const string& name )
+{
+	ifstream db(DB_ROOT + name + ".cdb");
+
+	return db;
+}
+
+bool create_database( const string& name )
+{
+	CreateDirectory((DB_ROOT + name).c_str());
+}
+
+string stripQuotes( const string& str )
+{
+	if (str.length() == 0)
+		return str;
+
+	const char& first = str[0];
+	const char& last = str[str.length() - 1];
+
+	if (first == last && (first == '\'' || first == '"' || first == '`'))
+	{
+		return str.substr(1, str.length() - 2);
+	}
+
+	return str;
+}
 
 ArrayList<string> cleanAndSplitStatement( const string& str )
 {
@@ -28,6 +59,7 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 	{
 		const char& prev = (i == 0 ? 0 : str[i - 1]);
 		char ch = str[i];
+		string& back = pieces.getBack();
 
 		if (inStartingWhitespace)
 		{
@@ -43,7 +75,7 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 
 			if (ch != '\\')
 			{
-				pieces.getBack() += ch;
+				back += ch;
 				fromLastSpace += ch;
 				continue;
 			}
@@ -56,7 +88,7 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 			if (ch == '\'')
 			{
 				inSingleQuotes = false;
-				pieces.getBack() += ch;
+				back += ch;
 				fromLastSpace += ch;
 				continue;
 			}
@@ -66,7 +98,7 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 			if (ch == '"')
 			{
 				inDoubleQuotes = false;
-				pieces.getBack() += ch;
+				back += ch;
 				fromLastSpace += ch;
 				continue;
 			}
@@ -76,7 +108,7 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 			if (ch == '`')
 			{
 				inBackQuotes = false;
-				pieces.getBack() += ch;
+				back += ch;
 				fromLastSpace += ch;
 				continue;
 			}
@@ -103,7 +135,15 @@ ArrayList<string> cleanAndSplitStatement( const string& str )
 					continue;
 
 				if (VALID_COMMANDS.contains(fromLastSpace))
+				{
+					back = back.substr(0, back.length() - fromLastSpace.length());
+					if (back.length() == 0)
+						pieces.popBack();
+
+					pieces.add(fromLastSpace);
 					pieces.add("");
+					continue;
+				}
 				else
 					pieces.getBack() += ch;
 
@@ -151,7 +191,18 @@ bool processStatement( string& rawStmt )
 	}
 	else if (cmd == "create")
 	{
+		if (stmt.getSize() < 3)
+		{
+			printf("Error: Malformed Command");
+		}
 
+		const string& what = stmt[1];
+		const string& name = stripQuotes(stmt[2]);
+
+		if (what == "database")
+		{
+			create_database(name);
+		}
 	}
 	else if (cmd == "delete")
 	{
@@ -209,6 +260,10 @@ int main( int argc, char* argv[] )
 	VALID_COMMANDS.add("delete");
 	VALID_COMMANDS.add("show");
 	VALID_COMMANDS.add("use");
+	VALID_COMMANDS.add("database");
+	VALID_COMMANDS.add("databases");
+	VALID_COMMANDS.add("table");
+	VALID_COMMANDS.add("tables");
 	VALID_COMMANDS.add("exit");
 
 	runConsole();

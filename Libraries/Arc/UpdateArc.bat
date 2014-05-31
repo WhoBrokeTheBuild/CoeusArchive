@@ -1,4 +1,4 @@
-SET ARC_PATH="C:\Users\slanewalsh\Documents\Repositories\Arc-2.0"
+SET ARC_PATH="..\..\..\Arc-2.0"
 
 xcopy /s /y %ARC_PATH%\Debug\ArcCore.lib lib\ArcCore.lib
 xcopy /s /y %ARC_PATH%\Debug\ArcNet.lib lib\ArcNet.lib
