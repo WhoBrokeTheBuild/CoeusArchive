@@ -43,7 +43,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../Libraries/Arc/include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Libraries/Arc/include;../Libraries/dirent/include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

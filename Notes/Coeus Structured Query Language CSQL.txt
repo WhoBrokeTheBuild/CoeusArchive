@@ -83,6 +83,15 @@ users.cdb
 }
 
 
+USE `test_db`;
+CREATE TABLE `test` (
+  `id` INT AUTO_INCREMENT,
+  `name` VARCHAR(64) DEFAULT 'John Doe',
+  `time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY_KEY(`id`)
+);
+
+
 
 CREATE TABLE `test` (
   `id` INT AUTO_INCREMENT,

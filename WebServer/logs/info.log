@@ -129,3 +129,719 @@
 +0.0.1.872 INF <server.cpp:201> Server: S: Location: http://localhost:8080/cat.gif
 +0.0.1.876 INF <server.cpp:201> Server: S: Content-Size: 1047852
 +0.0.1.878 INF <server.cpp:130> Server: Sending File: <html/cat.gif>
++0.0.0.113 INF <server.cpp:45> Server: Listening on port 8080
++0.0.2.151 INF <server.cpp:50> Server: Connection from IP Address [127.0.0.1]
++0.0.2.157 INF <server.cpp:196> Server: C: GET / HTTP/1.1
++0.0.2.160 INF <server.cpp:163> Server: C: Host: localhost:8080
++0.0.2.161 INF <server.cpp:163> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.2.167 INF <server.cpp:163> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.2.173 INF <server.cpp:163> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.2.174 INF <server.cpp:163> Server: C: Accept-Encoding: gzip, deflate
++0.0.2.178 INF <server.cpp:163> Server: C: Connection: keep-alive
++0.0.2.181 INF <server.cpp:178> Server: Read 6 Headers
++0.0.2.184 INF <server.cpp:217> Server: S: HTTP/1.0 200 OK
++0.0.2.186 INF <server.cpp:217> Server: S: Server: Coeus 0.3
++0.0.2.188 INF <server.cpp:217> Server: S: Location: http://localhost:8080/
++0.0.2.190 INF <server.cpp:217> Server: S: Content-Type: text/html
++0.0.2.193 INF <server.cpp:217> Server: S: Content-Size: 135
++0.0.2.194 INF <server.cpp:145> Server: Sending File: <html/index.html>
++0.0.2.273 INF <server.cpp:50> Server: Connection from IP Address [127.0.0.1]
++0.0.2.276 INF <server.cpp:196> Server: C: GET /favicon.ico HTTP/1.1
++0.0.2.279 INF <server.cpp:163> Server: C: Host: localhost:8080
++0.0.2.283 INF <server.cpp:163> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.2.286 INF <server.cpp:163> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.2.290 INF <server.cpp:163> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.2.292 INF <server.cpp:163> Server: C: Accept-Encoding: gzip, deflate
++0.0.2.296 INF <server.cpp:163> Server: C: Connection: keep-alive
++0.0.2.298 INF <server.cpp:178> Server: Read 6 Headers
++0.0.2.301 INF <server.cpp:217> Server: S: HTTP/1.0 404 Not Found
++0.0.2.302 INF <server.cpp:217> Server: S: Server: Coeus 0.3
++0.0.2.303 INF <server.cpp:217> Server: S: Location: http://localhost:8080/favicon.ico
++0.0.2.308 INF <server.cpp:217> Server: S: Content-Type: unknown
++0.0.2.309 INF <server.cpp:217> Server: S: Content-Size: 0
++0.0.2.312 INF <server.cpp:145> Server: Sending File: <html/favicon.ico>
++0.0.2.319 INF <server.cpp:50> Server: Connection from IP Address [127.0.0.1]
++0.0.2.323 INF <server.cpp:196> Server: C: GET /favicon.ico HTTP/1.1
++0.0.2.326 INF <server.cpp:163> Server: C: Host: localhost:8080
++0.0.2.329 INF <server.cpp:163> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.2.332 INF <server.cpp:163> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.2.338 INF <server.cpp:163> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.2.339 INF <server.cpp:163> Server: C: Accept-Encoding: gzip, deflate
++0.0.2.342 INF <server.cpp:163> Server: C: Connection: keep-alive
++0.0.2.344 INF <server.cpp:178> Server: Read 6 Headers
++0.0.2.345 INF <server.cpp:217> Server: S: HTTP/1.0 404 Not Found
++0.0.2.348 INF <server.cpp:217> Server: S: Server: Coeus 0.3
++0.0.2.349 INF <server.cpp:217> Server: S: Location: http://localhost:8080/favicon.ico
++0.0.2.352 INF <server.cpp:217> Server: S: Content-Type: unknown
++0.0.2.355 INF <server.cpp:217> Server: S: Content-Size: 0
++0.0.2.355 INF <server.cpp:145> Server: Sending File: <html/favicon.ico>
++0.0.3.151 INF <server.cpp:50> Server: Connection from IP Address [127.0.0.1]
++0.0.5.186 INF <server.cpp:196> Server: C: GET /test.html HTTP/1.1
++0.0.5.190 INF <server.cpp:163> Server: C: Host: localhost:8080
++0.0.5.192 INF <server.cpp:163> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.5.197 INF <server.cpp:163> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.5.202 INF <server.cpp:163> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.5.204 INF <server.cpp:163> Server: C: Accept-Encoding: gzip, deflate
++0.0.5.208 INF <server.cpp:163> Server: C: Referer: http://localhost:8080/
++0.0.5.210 INF <server.cpp:163> Server: C: Connection: keep-alive
++0.0.5.211 INF <server.cpp:178> Server: Read 7 Headers
++0.0.5.215 INF <server.cpp:217> Server: S: HTTP/1.0 200 OK
++0.0.5.217 INF <server.cpp:217> Server: S: Server: Coeus 0.3
++0.0.5.218 INF <server.cpp:217> Server: S: Location: http://localhost:8080/test.html
++0.0.5.222 INF <server.cpp:217> Server: S: Content-Type: text/html
++0.0.5.223 INF <server.cpp:217> Server: S: Content-Size: 182
++0.0.5.227 INF <server.cpp:145> Server: Sending File: <html/test.html>
++0.0.5.230 INF <server.cpp:50> Server: Connection from IP Address [127.0.0.1]
++0.0.5.257 INF <server.cpp:196> Server: C: GET /cat.jpg HTTP/1.1
++0.0.5.261 INF <server.cpp:163> Server: C: Host: localhost:8080
++0.0.5.263 INF <server.cpp:163> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.5.268 INF <server.cpp:163> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.5.271 INF <server.cpp:163> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.5.274 INF <server.cpp:163> Server: C: Accept-Encoding: gzip, deflate
++0.0.5.277 INF <server.cpp:163> Server: C: Referer: http://localhost:8080/test.html
++0.0.5.281 INF <server.cpp:163> Server: C: Connection: keep-alive
++0.0.5.283 INF <server.cpp:178> Server: Read 7 Headers
++0.0.5.284 INF <server.cpp:217> Server: S: HTTP/1.0 200 OK
++0.0.5.287 INF <server.cpp:217> Server: S: Server: Coeus 0.3
++0.0.5.289 INF <server.cpp:217> Server: S: Location: http://localhost:8080/cat.jpg
++0.0.5.291 INF <server.cpp:217> Server: S: Content-Type: image/jpeg
++0.0.5.294 INF <server.cpp:217> Server: S: Content-Size: 10547
++0.0.5.295 INF <server.cpp:145> Server: Sending File: <html/cat.jpg>
++0.0.5.297 INF <server.cpp:50> Server: Connection from IP Address [127.0.0.1]
++0.0.5.300 INF <server.cpp:196> Server: C: GET /cat.png HTTP/1.1
++0.0.5.302 INF <server.cpp:163> Server: C: Host: localhost:8080
++0.0.5.304 INF <server.cpp:163> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.5.309 INF <server.cpp:163> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.5.311 INF <server.cpp:163> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.5.314 INF <server.cpp:163> Server: C: Accept-Encoding: gzip, deflate
++0.0.5.316 INF <server.cpp:163> Server: C: Referer: http://localhost:8080/test.html
++0.0.5.320 INF <server.cpp:163> Server: C: Connection: keep-alive
++0.0.5.322 INF <server.cpp:178> Server: Read 7 Headers
++0.0.5.323 INF <server.cpp:217> Server: S: HTTP/1.0 200 OK
++0.0.5.326 INF <server.cpp:217> Server: S: Server: Coeus 0.3
++0.0.5.329 INF <server.cpp:217> Server: S: Location: http://localhost:8080/cat.png
++0.0.5.331 INF <server.cpp:217> Server: S: Content-Type: image/png
++0.0.5.334 INF <server.cpp:217> Server: S: Content-Size: 440374
++0.0.5.335 INF <server.cpp:145> Server: Sending File: <html/cat.png>
++0.0.5.340 INF <server.cpp:50> Server: Connection from IP Address [127.0.0.1]
++0.0.5.342 INF <server.cpp:196> Server: C: GET /cat.gif HTTP/1.1
++0.0.5.346 INF <server.cpp:163> Server: C: Host: localhost:8080
++0.0.5.348 INF <server.cpp:163> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.5.353 INF <server.cpp:163> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.5.356 INF <server.cpp:163> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.5.360 INF <server.cpp:163> Server: C: Accept-Encoding: gzip, deflate
++0.0.5.362 INF <server.cpp:163> Server: C: Referer: http://localhost:8080/test.html
++0.0.5.364 INF <server.cpp:163> Server: C: Connection: keep-alive
++0.0.5.367 INF <server.cpp:178> Server: Read 7 Headers
++0.0.5.368 INF <server.cpp:217> Server: S: HTTP/1.0 200 OK
++0.0.5.369 INF <server.cpp:217> Server: S: Server: Coeus 0.3
++0.0.5.372 INF <server.cpp:217> Server: S: Location: http://localhost:8080/cat.gif
++0.0.5.375 INF <server.cpp:217> Server: S: Content-Type: image/gif
++0.0.5.377 INF <server.cpp:217> Server: S: Content-Size: 1047852
++0.0.5.380 INF <server.cpp:145> Server: Sending File: <html/cat.gif>
++0.0.8.571 INF <server.cpp:50> Server: Connection from IP Address [127.0.0.1]
++0.0.8.576 INF <server.cpp:196> Server: C: GET /files/ HTTP/1.1
++0.0.8.578 INF <server.cpp:163> Server: C: Host: localhost:8080
++0.0.8.579 INF <server.cpp:163> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.8.585 INF <server.cpp:163> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.8.590 INF <server.cpp:163> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.8.593 INF <server.cpp:163> Server: C: Accept-Encoding: gzip, deflate
++0.0.8.595 INF <server.cpp:163> Server: C: Connection: keep-alive
++0.0.8.597 INF <server.cpp:178> Server: Read 6 Headers
++0.0.8.599 INF <server.cpp:217> Server: S: HTTP/1.0 200 OK
++0.0.8.600 INF <server.cpp:217> Server: S: Server: Coeus 0.3
++0.0.8.602 INF <server.cpp:217> Server: S: Location: http://localhost:8080/files/
++0.0.8.604 INF <server.cpp:217> Server: S: Content-Type: text/html
++0.0.8.607 INF <server.cpp:217> Server: S: Content-Size: 97
++0.0.8.609 INF <server.cpp:205> Server: S: <html>
+<head>
+<title>Directory Listing for /files/</title>
+</head>
+<body>
+</body>
+</html>
+
++0.0.0.60 INF <server.cpp:45> Server: Listening on port 8080
++0.0.2.285 INF <server.cpp:50> Server: Connection from IP Address [127.0.0.1]
++0.0.2.289 INF <server.cpp:196> Server: C: GET /files/ HTTP/1.1
++0.0.2.289 INF <server.cpp:163> Server: C: Host: localhost:8080
++0.0.2.292 INF <server.cpp:163> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.2.296 INF <server.cpp:163> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.2.302 INF <server.cpp:163> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.2.303 INF <server.cpp:163> Server: C: Accept-Encoding: gzip, deflate
++0.0.2.306 INF <server.cpp:163> Server: C: Connection: keep-alive
++0.0.2.309 INF <server.cpp:163> Server: C: Cache-Control: max-age=0
++0.0.2.311 INF <server.cpp:178> Server: Read 7 Headers
++0.0.2.312 INF <server.cpp:217> Server: S: HTTP/1.0 200 OK
++0.0.2.313 INF <server.cpp:217> Server: S: Server: Coeus 0.3
++0.0.2.316 INF <server.cpp:217> Server: S: Location: http://localhost:8080/files/
++0.0.2.319 INF <server.cpp:217> Server: S: Content-Type: text/html
++0.0.2.321 INF <server.cpp:217> Server: S: Content-Size: 204
++0.0.2.322 INF <server.cpp:205> Server: S: <html>
+<head>
+<title>Directory Listing for /files/</title>
+</head>
+<body>
+<h1>Directory Listing for /files/</h1>
+<table>
+<tr><th>Icon</th><th>Name</th><th>Type</th></tr></table>
+</body>
+</html>
+
++0.0.0.58 INF <server.cpp:46> Server: Listening on port 8080
++0.0.2.371 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.2.375 INF <server.cpp:197> Server: C: GET /files/ HTTP/1.1
++0.0.2.377 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.2.378 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.2.382 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.2.388 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.2.391 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.2.392 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.2.395 INF <server.cpp:164> Server: C: Cache-Control: max-age=0
++0.0.2.398 INF <server.cpp:179> Server: Read 7 Headers
++0.0.2.401 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.2.404 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.2.408 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/
++0.0.2.411 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.0.2.415 INF <server.cpp:218> Server: S: Content-Size: 505
++0.0.2.417 INF <server.cpp:206> Server: S: <html>
+<head>
+<title>Directory Listing for /files/</title>
+</head>
+<body>
+<h1>Directory Listing for /files/</h1>
+<table>
+<tr><th>Icon</th><th>Name</th><th>Type</th></tr><tr><td></td><td>.</td><td>Directory</td></tr>
+<tr><td></td><td>..</td><td>Directory</td></tr>
+<tr><td></td><td>test1.txt</td><td>File</td></tr>
+<tr><td></td><td>test2.txt</td><td>File</td></tr>
+<tr><td></td><td>test3.txt</td><td>File</td></tr>
+<tr><td></td><td>test4.txt</td><td>File</td></tr>
+</table>
+</body>
+</html>
+
++0.0.0.59 INF <server.cpp:46> Server: Listening on port 8080
++0.0.2.924 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.2.930 INF <server.cpp:197> Server: C: GET /files/ HTTP/1.1
++0.0.2.933 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.2.937 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.2.944 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.2.951 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.2.954 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.2.959 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.2.961 INF <server.cpp:164> Server: C: Pragma: no-cache
++0.0.2.964 INF <server.cpp:164> Server: C: Cache-Control: no-cache
++0.0.2.967 INF <server.cpp:179> Server: Read 8 Headers
++0.0.2.970 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.2.971 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.2.974 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/
++0.0.2.979 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.0.2.983 INF <server.cpp:218> Server: S: Content-Size: 635
++0.0.3.674 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.0.59 INF <server.cpp:46> Server: Listening on port 8080
++0.0.8.515 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.8.520 INF <server.cpp:197> Server: C: GET / HTTP/1.1
++0.0.8.522 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.8.524 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.8.529 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.8.533 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.8.536 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.8.538 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.8.539 INF <server.cpp:179> Server: Read 6 Headers
++0.0.8.541 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.8.543 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.8.545 INF <server.cpp:218> Server: S: Location: http://localhost:8080/
++0.0.8.546 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.0.8.548 INF <server.cpp:218> Server: S: Content-Size: 135
++0.0.8.550 INF <server.cpp:146> Server: Sending File: <html/index.html>
++0.0.8.586 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.8.590 INF <server.cpp:197> Server: C: GET /favicon.ico HTTP/1.1
++0.0.8.592 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.8.593 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.8.599 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.8.602 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.8.604 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.8.607 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.8.609 INF <server.cpp:179> Server: Read 6 Headers
++0.0.8.611 INF <server.cpp:218> Server: S: HTTP/1.0 404 Not Found
++0.0.8.612 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.8.614 INF <server.cpp:218> Server: S: Location: http://localhost:8080/favicon.ico
++0.0.8.618 INF <server.cpp:218> Server: S: Content-Type: unknown
++0.0.8.619 INF <server.cpp:218> Server: S: Content-Size: 0
++0.0.8.621 INF <server.cpp:146> Server: Sending File: <html/favicon.ico>
++0.0.8.623 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.8.626 INF <server.cpp:197> Server: C: GET /favicon.ico HTTP/1.1
++0.0.8.628 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.8.630 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.8.635 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.8.640 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.8.644 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.8.647 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.8.649 INF <server.cpp:179> Server: Read 6 Headers
++0.0.8.651 INF <server.cpp:218> Server: S: HTTP/1.0 404 Not Found
++0.0.8.652 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.8.654 INF <server.cpp:218> Server: S: Location: http://localhost:8080/favicon.ico
++0.0.8.656 INF <server.cpp:218> Server: S: Content-Type: unknown
++0.0.8.659 INF <server.cpp:218> Server: S: Content-Size: 0
++0.0.8.661 INF <server.cpp:146> Server: Sending File: <html/favicon.ico>
++0.0.12.189 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.12.194 INF <server.cpp:197> Server: C: GET /files/ HTTP/1.1
++0.0.12.196 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.12.199 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.12.203 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.12.208 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.12.210 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.12.211 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.12.213 INF <server.cpp:179> Server: Read 6 Headers
++0.0.12.215 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.12.218 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.12.220 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/
++0.0.12.222 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.0.12.223 INF <server.cpp:218> Server: S: Content-Size: 635
++0.0.15.395 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.15.399 INF <server.cpp:197> Server: C: GET /files/test1.txt HTTP/1.1
++0.0.15.402 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.15.404 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.15.409 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.15.413 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.15.416 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.15.418 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/files/
++0.0.15.421 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.15.423 INF <server.cpp:179> Server: Read 7 Headers
++0.0.15.425 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.15.427 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.15.428 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/test1.txt
++0.0.15.432 INF <server.cpp:218> Server: S: Content-Type: unknown
++0.0.15.434 INF <server.cpp:218> Server: S: Content-Size: 0
++0.0.15.435 INF <server.cpp:146> Server: Sending File: <html/files/test1.txt>
++0.0.25.909 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.25.912 INF <server.cpp:197> Server: C: GET /files/ HTTP/1.1
++0.0.25.915 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.25.916 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.25.922 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.25.926 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.25.927 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.25.930 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.25.933 INF <server.cpp:164> Server: C: Cache-Control: max-age=0
++0.0.25.934 INF <server.cpp:179> Server: Read 7 Headers
++0.0.25.937 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.25.937 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.25.940 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/
++0.0.25.943 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.0.0.58 INF <server.cpp:46> Server: Listening on port 8080
++0.0.1.307 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.1.311 INF <server.cpp:197> Server: C: GET /files/ HTTP/1.1
++0.0.1.312 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.1.315 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.1.319 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.1.322 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.1.325 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.1.327 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.1.330 INF <server.cpp:164> Server: C: Cache-Control: max-age=0
++0.0.1.332 INF <server.cpp:179> Server: Read 7 Headers
++0.0.1.334 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.1.335 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.1.337 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/
++0.0.1.340 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.0.1.342 INF <server.cpp:218> Server: S: Content-Size: 651
++0.0.3.648 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.3.653 INF <server.cpp:197> Server: C: GET / HTTP/1.1
++0.0.3.654 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.3.655 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.3.661 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.3.664 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.3.668 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.3.670 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/files/
++0.0.3.673 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.3.674 INF <server.cpp:179> Server: Read 7 Headers
++0.0.3.677 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.3.678 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.3.680 INF <server.cpp:218> Server: S: Location: http://localhost:8080/
++0.0.3.681 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.0.3.684 INF <server.cpp:218> Server: S: Content-Size: 135
++0.0.3.686 INF <server.cpp:146> Server: Sending File: <html/index.html>
++0.0.4.906 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.4.908 INF <server.cpp:197> Server: C: GET /test.html HTTP/1.1
++0.0.4.910 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.4.913 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.4.918 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.4.921 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.4.925 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.4.927 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/
++0.0.4.929 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.4.932 INF <server.cpp:179> Server: Read 7 Headers
++0.0.4.934 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.4.934 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.4.936 INF <server.cpp:218> Server: S: Location: http://localhost:8080/test.html
++0.0.4.940 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.0.4.941 INF <server.cpp:218> Server: S: Content-Size: 182
++0.0.4.943 INF <server.cpp:146> Server: Sending File: <html/test.html>
++0.0.4.966 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.4.969 INF <server.cpp:197> Server: C: GET /cat.jpg HTTP/1.1
++0.0.4.972 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.4.974 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.4.979 INF <server.cpp:164> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.4.981 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.4.985 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.4.987 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/test.html
++0.0.4.989 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.4.992 INF <server.cpp:179> Server: Read 7 Headers
++0.0.4.993 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.4.994 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.4.997 INF <server.cpp:218> Server: S: Location: http://localhost:8080/cat.jpg
++0.0.5.0 INF <server.cpp:218> Server: S: Content-Type: image/jpeg
++0.0.5.1 INF <server.cpp:218> Server: S: Content-Size: 10547
++0.0.5.4 INF <server.cpp:146> Server: Sending File: <html/cat.jpg>
++0.0.5.6 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.5.8 INF <server.cpp:197> Server: C: GET /cat.png HTTP/1.1
++0.0.5.11 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.5.13 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.5.18 INF <server.cpp:164> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.5.19 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.5.22 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.5.25 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/test.html
++0.0.5.27 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.5.30 INF <server.cpp:179> Server: Read 7 Headers
++0.0.5.32 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.5.33 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.5.35 INF <server.cpp:218> Server: S: Location: http://localhost:8080/cat.png
++0.0.5.38 INF <server.cpp:218> Server: S: Content-Type: image/png
++0.0.5.39 INF <server.cpp:218> Server: S: Content-Size: 440374
++0.0.5.41 INF <server.cpp:146> Server: Sending File: <html/cat.png>
++0.0.5.47 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.5.52 INF <server.cpp:197> Server: C: GET /cat.gif HTTP/1.1
++0.0.5.53 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.5.57 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.5.60 INF <server.cpp:164> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.5.64 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.5.66 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.5.68 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/test.html
++0.0.5.72 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.5.73 INF <server.cpp:179> Server: Read 7 Headers
++0.0.5.76 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.5.77 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.5.79 INF <server.cpp:218> Server: S: Location: http://localhost:8080/cat.gif
++0.0.5.81 INF <server.cpp:218> Server: S: Content-Type: image/gif
++0.0.5.84 INF <server.cpp:218> Server: S: Content-Size: 1047852
++0.0.5.85 INF <server.cpp:146> Server: Sending File: <html/cat.gif>
++0.0.32.848 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.32.853 INF <server.cpp:197> Server: C: GET / HTTP/1.1
++0.0.32.854 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.32.856 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.32.861 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.32.866 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.32.869 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.32.872 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/files/
++0.0.32.875 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.32.876 INF <server.cpp:164> Server: C: Cache-Control: max-age=0
++0.0.32.879 INF <server.cpp:179> Server: Read 8 Headers
++0.0.32.881 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.32.882 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.32.883 INF <server.cpp:218> Server: S: Location: http://localhost:8080/
++0.0.32.886 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.0.32.888 INF <server.cpp:218> Server: S: Content-Size: 164
++0.0.32.889 INF <server.cpp:146> Server: Sending File: <html/index.html>
++0.0.37.791 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.37.797 INF <server.cpp:197> Server: C: GET / HTTP/1.1
++0.0.37.798 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.37.799 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.37.805 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.37.808 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.37.812 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.37.813 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/files/
++0.0.37.817 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.37.819 INF <server.cpp:164> Server: C: Cache-Control: max-age=0
++0.0.37.820 INF <server.cpp:179> Server: Read 8 Headers
++0.0.37.823 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.37.824 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.37.826 INF <server.cpp:218> Server: S: Location: http://localhost:8080/
++0.0.37.827 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.0.37.831 INF <server.cpp:218> Server: S: Content-Size: 173
++0.0.37.832 INF <server.cpp:146> Server: Sending File: <html/index.html>
++0.0.40.360 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.40.363 INF <server.cpp:197> Server: C: GET /files HTTP/1.1
++0.0.40.366 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.0.40.368 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.0.40.373 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.40.377 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.0.40.380 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.0.40.382 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/
++0.0.40.386 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.0.40.388 INF <server.cpp:179> Server: Read 7 Headers
++0.0.40.389 INF <server.cpp:218> Server: S: HTTP/1.0 404 Not Found
++0.0.40.391 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.40.393 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files
++0.0.40.395 INF <server.cpp:218> Server: S: Content-Type: unknown
++0.0.40.397 INF <server.cpp:218> Server: S: Content-Size: 0
++0.0.40.400 INF <server.cpp:146> Server: Sending File: <html/files>
++0.0.0.58 INF <server.cpp:46> Server: Listening on port 8080
++0.3.183.225 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.3.183.229 INF <server.cpp:197> Server: C: GET /files HTTP/1.1
++0.3.183.231 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.3.183.233 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.3.183.236 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.3.183.240 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.3.183.244 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.3.183.246 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/
++0.3.183.248 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.3.183.251 INF <server.cpp:164> Server: C: Cache-Control: max-age=0
++0.3.183.253 INF <server.cpp:179> Server: Read 8 Headers
++0.3.183.255 INF <server.cpp:218> Server: S: HTTP/1.0 404 Not Found
++0.3.183.259 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.3.183.261 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files
++0.3.183.264 INF <server.cpp:218> Server: S: Content-Type: unknown
++0.3.183.264 INF <server.cpp:218> Server: S: Content-Size: 0
++0.3.183.266 INF <server.cpp:146> Server: Sending File: <html/files>
++0.3.185.632 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.3.185.634 INF <server.cpp:197> Server: C: GET /files/ HTTP/1.1
++0.3.185.636 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.3.185.639 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.3.185.643 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.3.185.647 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.3.185.651 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.3.185.652 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.3.185.654 INF <server.cpp:179> Server: Read 6 Headers
++0.3.185.656 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.3.185.658 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.3.185.660 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/
++0.3.185.662 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.3.185.664 INF <server.cpp:218> Server: S: Content-Size: 651
++0.3.192.927 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.3.192.930 INF <server.cpp:197> Server: C: GET / HTTP/1.1
++0.3.192.932 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.3.192.934 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.3.192.940 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.3.192.945 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.3.192.947 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.3.192.949 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/files/
++0.3.192.951 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.3.192.955 INF <server.cpp:179> Server: Read 7 Headers
++0.3.192.955 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.3.192.957 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.3.192.960 INF <server.cpp:218> Server: S: Location: http://localhost:8080/
++0.3.192.962 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.3.192.964 INF <server.cpp:218> Server: S: Content-Size: 174
++0.3.192.966 INF <server.cpp:146> Server: Sending File: <html/index.html>
++0.3.193.869 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.3.193.871 INF <server.cpp:197> Server: C: GET /files/ HTTP/1.1
++0.3.193.873 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.3.193.876 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.3.193.880 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.3.193.886 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.3.193.888 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.3.193.889 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/
++0.3.193.893 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.3.193.895 INF <server.cpp:179> Server: Read 7 Headers
++0.3.193.897 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.3.193.899 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.3.193.901 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/
++0.3.193.902 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.3.193.904 INF <server.cpp:218> Server: S: Content-Size: 651
++0.3.220.29 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.3.220.33 INF <server.cpp:197> Server: C: GET /files/ HTTP/1.1
++0.3.220.35 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.3.220.37 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.3.220.42 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.3.220.46 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.3.220.48 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.3.220.50 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/
++0.3.220.54 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.3.220.55 INF <server.cpp:164> Server: C: Cache-Control: max-age=0
++0.3.220.57 INF <server.cpp:179> Server: Read 8 Headers
++0.3.220.59 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.3.220.61 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.3.220.63 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/
++0.3.220.65 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.3.220.67 INF <server.cpp:218> Server: S: Content-Size: 651
++0.3.221.108 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.3.221.113 INF <server.cpp:197> Server: C: GET /files/test1.txt HTTP/1.1
++0.3.221.115 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.3.221.117 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.3.221.121 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.3.221.126 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.3.221.130 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.3.221.132 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/files/
++0.3.221.136 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.3.221.138 INF <server.cpp:179> Server: Read 7 Headers
++0.3.221.139 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.3.221.141 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.3.221.143 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/test1.txt
++0.3.221.147 INF <server.cpp:218> Server: S: Content-Type: unknown
++0.3.221.149 INF <server.cpp:218> Server: S: Content-Size: 6
++0.3.221.151 INF <server.cpp:146> Server: Sending File: <html/files/test1.txt>
++0.3.222.748 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.3.222.751 INF <server.cpp:197> Server: C: GET /files/test2.txt HTTP/1.1
++0.3.222.753 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.3.222.755 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.3.222.761 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.3.222.764 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.3.222.768 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.3.222.770 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/files/
++0.3.222.772 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.3.222.774 INF <server.cpp:179> Server: Read 7 Headers
++0.3.222.776 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.3.222.777 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.3.222.779 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/test2.txt
++0.3.222.783 INF <server.cpp:218> Server: S: Content-Type: unknown
++0.3.222.785 INF <server.cpp:218> Server: S: Content-Size: 6
++0.3.222.787 INF <server.cpp:146> Server: Sending File: <html/files/test2.txt>
++0.3.225.326 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.3.225.328 INF <server.cpp:197> Server: C: GET / HTTP/1.1
++0.3.225.330 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.3.225.333 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.3.225.341 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.3.225.345 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.3.225.348 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.3.225.350 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/files/
++0.3.225.352 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.3.225.354 INF <server.cpp:179> Server: Read 7 Headers
++0.3.225.356 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.3.225.358 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.3.225.360 INF <server.cpp:218> Server: S: Location: http://localhost:8080/
++0.3.225.361 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.3.225.363 INF <server.cpp:218> Server: S: Content-Size: 174
++0.3.225.365 INF <server.cpp:146> Server: Sending File: <html/index.html>
++0.3.228.333 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.3.228.337 INF <server.cpp:197> Server: C: GET /files/test3.txt HTTP/1.1
++0.3.228.339 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.3.228.343 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.3.228.348 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.3.228.352 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.3.228.354 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.3.228.356 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/files/
++0.3.228.360 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.3.228.361 INF <server.cpp:179> Server: Read 7 Headers
++0.3.228.363 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.3.228.365 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.3.228.367 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/test3.txt
++0.3.228.371 INF <server.cpp:218> Server: S: Content-Type: unknown
++0.3.228.373 INF <server.cpp:218> Server: S: Content-Size: 6
++0.3.228.375 INF <server.cpp:146> Server: Sending File: <html/files/test3.txt>
++0.7.444.901 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.7.444.906 INF <server.cpp:197> Server: C: GET /files/ HTTP/1.1
++0.7.444.908 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.7.444.911 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.7.444.915 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.7.444.920 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.7.444.923 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.7.444.924 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/
++0.7.444.928 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.7.444.930 INF <server.cpp:164> Server: C: Cache-Control: max-age=0
++0.7.444.933 INF <server.cpp:179> Server: Read 8 Headers
++0.7.444.936 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.7.444.937 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.7.444.940 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/
++0.7.444.942 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.7.444.946 INF <server.cpp:218> Server: S: Content-Size: 651
++0.7.446.964 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.7.446.968 INF <server.cpp:197> Server: C: GET / HTTP/1.1
++0.7.446.971 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.7.446.972 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.7.446.977 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.7.446.984 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.7.446.985 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.7.446.989 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/files/
++0.7.446.990 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.7.446.993 INF <server.cpp:179> Server: Read 7 Headers
++0.7.446.994 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.7.446.997 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.7.446.998 INF <server.cpp:218> Server: S: Location: http://localhost:8080/
++0.7.447.1 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.7.447.2 INF <server.cpp:218> Server: S: Content-Size: 174
++0.7.447.5 INF <server.cpp:146> Server: Sending File: <html/index.html>
++0.7.448.750 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.7.448.753 INF <server.cpp:197> Server: C: GET /test.html HTTP/1.1
++0.7.448.756 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.7.448.757 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.7.448.761 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.7.448.769 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.7.448.770 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.7.448.773 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/
++0.7.448.776 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.7.448.778 INF <server.cpp:179> Server: Read 7 Headers
++0.7.448.779 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.7.448.782 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.7.448.783 INF <server.cpp:218> Server: S: Location: http://localhost:8080/test.html
++0.7.448.786 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.7.448.789 INF <server.cpp:218> Server: S: Content-Size: 182
++0.7.448.790 INF <server.cpp:146> Server: Sending File: <html/test.html>
++0.7.448.832 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.7.448.838 INF <server.cpp:197> Server: C: GET /cat.jpg HTTP/1.1
++0.7.448.842 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.7.448.843 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.7.448.848 INF <server.cpp:164> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.7.448.851 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.7.448.854 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.7.448.855 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/test.html
++0.7.448.859 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.7.448.860 INF <server.cpp:179> Server: Read 7 Headers
++0.7.448.863 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.7.448.869 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.7.448.871 INF <server.cpp:218> Server: S: Location: http://localhost:8080/cat.jpg
++0.7.448.873 INF <server.cpp:218> Server: S: Content-Type: image/jpeg
++0.7.448.876 INF <server.cpp:218> Server: S: Content-Size: 10547
++0.7.448.877 INF <server.cpp:146> Server: Sending File: <html/cat.jpg>
++0.7.448.881 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.7.448.884 INF <server.cpp:197> Server: C: GET /cat.png HTTP/1.1
++0.7.448.885 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.7.448.888 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.7.448.893 INF <server.cpp:164> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.7.448.894 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.7.448.898 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.7.448.901 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/test.html
++0.7.448.903 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.7.448.906 INF <server.cpp:179> Server: Read 7 Headers
++0.7.448.907 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.7.448.910 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.7.448.911 INF <server.cpp:218> Server: S: Location: http://localhost:8080/cat.png
++0.7.448.915 INF <server.cpp:218> Server: S: Content-Type: image/png
++0.7.448.917 INF <server.cpp:218> Server: S: Content-Size: 440374
++0.7.448.919 INF <server.cpp:146> Server: Sending File: <html/cat.png>
++0.7.448.924 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.7.448.928 INF <server.cpp:197> Server: C: GET /cat.gif HTTP/1.1
++0.7.448.929 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.7.448.932 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.7.448.937 INF <server.cpp:164> Server: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.7.448.941 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.7.448.944 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.7.448.947 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/test.html
++0.7.448.951 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.7.448.954 INF <server.cpp:179> Server: Read 7 Headers
++0.7.448.958 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.7.448.960 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.7.448.963 INF <server.cpp:218> Server: S: Location: http://localhost:8080/cat.gif
++0.7.448.967 INF <server.cpp:218> Server: S: Content-Type: image/gif
++0.7.448.971 INF <server.cpp:218> Server: S: Content-Size: 1047852
++0.7.448.971 INF <server.cpp:146> Server: Sending File: <html/cat.gif>
++0.8.498.622 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.8.498.627 INF <server.cpp:197> Server: C: GET /files/ HTTP/1.1
++0.8.498.628 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.8.498.631 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.8.498.635 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.8.498.640 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.8.498.643 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.8.498.645 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/
++0.8.498.648 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.8.498.651 INF <server.cpp:179> Server: Read 7 Headers
++0.8.498.653 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.8.498.653 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.8.498.656 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/
++0.8.498.658 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.8.498.661 INF <server.cpp:218> Server: S: Content-Size: 651
++0.8.500.421 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.8.500.424 INF <server.cpp:197> Server: C: GET /files/test4.txt HTTP/1.1
++0.8.500.428 INF <server.cpp:164> Server: C: Host: localhost:8080
++0.8.500.429 INF <server.cpp:164> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0
++0.8.500.433 INF <server.cpp:164> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.8.500.438 INF <server.cpp:164> Server: C: Accept-Language: en-US,en;q=0.5
++0.8.500.441 INF <server.cpp:164> Server: C: Accept-Encoding: gzip, deflate
++0.8.500.442 INF <server.cpp:164> Server: C: Referer: http://localhost:8080/files/
++0.8.500.446 INF <server.cpp:164> Server: C: Connection: keep-alive
++0.8.500.447 INF <server.cpp:179> Server: Read 7 Headers
++0.8.500.450 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.8.500.451 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.8.500.454 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/test4.txt
++0.8.500.457 INF <server.cpp:218> Server: S: Content-Type: unknown
++0.8.500.459 INF <server.cpp:218> Server: S: Content-Size: 6
++0.8.500.459 INF <server.cpp:146> Server: Sending File: <html/files/test4.txt>

@@ -23,10 +23,10 @@ public:
 
 	virtual inline string getClassName( void ) const { return "Server"; }
 
-	inline string getVersionString( void ) const { return "0.2"; }
+	inline string getVersionString( void ) const { return "0.3"; }
 
 	inline int getVersionMajor( void ) const { return 0; }
-	inline int getVersionMinor( void ) const { return 2; }
+	inline int getVersionMinor( void ) const { return 3; }
 
 	bool run( void );
 
@@ -41,6 +41,7 @@ protected:
 	bool sendString( const string& str );
 	bool sendLine( const string& line );
 	bool sendFile( std::ifstream& file );
+	void sendDirectoryList( const string& path, const string& realPath );
 
 	ServerConfig*		mp_ServerConfig;
 
