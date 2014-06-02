@@ -4,6 +4,8 @@
 #include <Arc/StringFunctions.h>
 #include <Arc/ParseFunctions.h>
 
+#include "Interpreter.h"
+
 string CSLStatement::readNextChunk( const string& data )
 {
 	string tmp;
@@ -400,13 +402,88 @@ bool CSLStatement::execute( void )
 						}
 						break;
 					case CHUNK_TYPE_VAR:
+						{
+							CSLVariableChunk* pTmp = (CSLVariableChunk*)chunks[i];
+							const string& varName = pTmp->VarName;
 
+							switch (Interpreter::GetVarType(varName))
+							{
+							case VAR_TYPE_STRING:
+
+								cout << Interpreter::GetStringVar(varName);
+
+								break;
+							case VAR_TYPE_INT:
+
+								cout << Interpreter::GetIntVar(varName);
+
+								break;
+							case VAR_TYPE_FLOAT:
+
+								cout << Interpreter::GetFloatVar(varName);
+
+								break;
+							}
+						}
 						break;
 					}
 				}
 
 				break;
 			}
+		}
+		break;
+	case CHUNK_TYPE_OP:
+		{
+			CSLOperatorChunk* pTmp = (CSLOperatorChunk*)pChnk;
+
+			if (chunks.getSize() < 2)
+			{
+				// Error
+				return false;
+			}
+
+			if (pTmp->Op != OPERATOR_PLUS_PLUS && pTmp->Op != OPERATOR_MINUS_MINUS)
+			{
+				// Error
+				return false;
+			}
+
+			if (chunks[1]->Type != CHUNK_TYPE_VAR)
+			{
+				// Error
+				return false;
+			}
+
+			CSLVariableChunk* pVar = (CSLVariableChunk*)chunks[1];
+			CSLVarType type = Interpreter::GetVarType(pVar->VarName);
+
+			if (type != VAR_TYPE_INT && type != VAR_TYPE_FLOAT)
+			{
+				// Error
+				return false;
+			}
+
+			if (pTmp->Op == OPERATOR_PLUS_PLUS)
+			{
+				if (type == VAR_TYPE_INT)
+					++Interpreter::GetIntVar(pVar->VarName);
+				else
+					++Interpreter::GetFloatVar(pVar->VarName);
+			}
+			else if (pTmp->Op == OPERATOR_MINUS_MINUS)
+			{
+				if (type == VAR_TYPE_INT)
+					--Interpreter::GetIntVar(pVar->VarName);
+				else
+					--Interpreter::GetFloatVar(pVar->VarName);
+			}
+		}
+		break;
+	case CHUNK_TYPE_VAR:
+		{
+			CSLVariableChunk* pTmp = (CSLVariableChunk*)pChnk;
+
 		}
 		break;
 	}

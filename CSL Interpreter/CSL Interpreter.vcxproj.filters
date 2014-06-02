@@ -44,5 +44,8 @@
     <ClInclude Include="Interpreter.h">
       <Filter>Project</Filter>
     </ClInclude>
+    <ClInclude Include="CSLVarType.h">
+      <Filter>Project\Enums</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

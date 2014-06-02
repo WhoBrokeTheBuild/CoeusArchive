@@ -11,5 +11,7 @@ int main( int argc, char* argv[] )
 	const string& filename = argv[1];
 	gp_Interpreter = New Interpreter(filename);
 
+	delete gp_Interpreter;
+
 	return 0;
 }

@@ -9,6 +9,14 @@ using namespace std;
 
 Interpreter* gp_Interpreter = nullptr;
 
+ArrayList<CSLStatement*> Interpreter::s_Statements;
+
+Map<string, CSLVarType> Interpreter::s_Vars;
+
+Map<string, string> Interpreter::s_StringVars;
+Map<string, int> Interpreter::s_IntVars;
+Map<string, float> Interpreter::s_FloatVars;
+
 void Interpreter::processStatement( const string& stmt )
 {
 	string tmpStmt = stmt;
@@ -19,7 +27,7 @@ void Interpreter::processStatement( const string& stmt )
 
 	CSLStatement* stmtObj = New CSLStatement();
 	stmtObj->buildStatement(tmpStmt);
-	m_Statements.add(stmtObj);
+	s_Statements.add(stmtObj);
 	stmtObj->execute();
 }
 
@@ -154,6 +162,65 @@ Interpreter::Interpreter( const string& filename )
 
 Interpreter::~Interpreter(void)
 {
-	while ( ! m_Statements.isEmpty())
-		delete m_Statements.popBack();
+	while ( ! s_Statements.isEmpty())
+		delete s_Statements.popBack();
+}
+
+void Interpreter::SetStringVar( const string& name, const string& data )
+{
+	if (s_Vars.containsKey(name))
+	{
+		if (GetVarType(name) == VAR_TYPE_STRING)
+		{
+			s_StringVars[name] = data;
+			return;
+		}
+		else
+			RemoveVar(name);
+	}
+
+	s_Vars.add(name, VAR_TYPE_STRING);
+	s_StringVars.add(name, data);
+}
+
+void Interpreter::SetIntVar( const string& name, const int& data )
+{
+	if (s_Vars.containsKey(name))
+	{
+		if (GetVarType(name) == VAR_TYPE_INT)
+		{
+			s_IntVars[name] = data;
+			return;
+		}
+		else
+			RemoveVar(name);
+	}
+
+	s_Vars.add(name, VAR_TYPE_INT);
+	s_IntVars.add(name, data);
+}
+
+void Interpreter::SetFloatVar( const string& name, const float& data )
+{
+	if (s_Vars.containsKey(name))
+	{
+		if (GetVarType(name) == VAR_TYPE_FLOAT)
+		{
+			s_FloatVars[name] = data;
+			return;
+		}
+		else
+			RemoveVar(name);
+	}
+
+	s_Vars.add(name, VAR_TYPE_FLOAT);
+	s_FloatVars.add(name, data);
+}
+
+void Interpreter::RemoveVar( const string& name )
+{
+	s_Vars.removeKey(name);
+	s_StringVars.removeKey(name);
+	s_IntVars.removeKey(name);
+	s_FloatVars.removeKey(name);
 }
