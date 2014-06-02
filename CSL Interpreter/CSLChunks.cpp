@@ -8,7 +8,7 @@ CSLFunctionChunk::~CSLFunctionChunk(void)
 		delete Params.popBack();
 }
 
-CSLParenthesisChunk::~CSLParenthesisChunk(void)
+CSLStatementChunk::~CSLStatementChunk(void)
 {
 	delete Inner;
 }

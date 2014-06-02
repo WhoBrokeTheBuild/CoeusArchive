@@ -79,19 +79,19 @@ public:
 
 };
 
-struct CSLParenthesisChunk
+struct CSLStatementChunk
 	: public CSLChunk
 {
 public:
 
-	inline CSLParenthesisChunk( CSLStatement* inner )
-		: CSLChunk(CSLChunkType::CHUNK_TYPE_PAREN),
+	inline CSLStatementChunk( CSLStatement* inner )
+		: CSLChunk(CSLChunkType::CHUNK_TYPE_STMT),
 	      Inner(inner)
 	{ }
 
-	virtual ~CSLParenthesisChunk( void );
+	virtual ~CSLStatementChunk( void );
 
-	virtual inline string getClassName( void ) const { return "CSL Parenthesis Chunk"; }
+	virtual inline string getClassName( void ) const { return "CSL Statement Chunk"; }
 
 	CSLStatement* Inner;
 
