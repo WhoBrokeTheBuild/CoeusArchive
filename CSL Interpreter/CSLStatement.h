@@ -45,7 +45,9 @@ public:
 
 private:
 
-	CSLChunkType findChunkType(const string& data);
+	CSLChunkType findChunkType( const string& data );
+
+	string readNextChunk( const string& data );
 
 	ArrayList<CSLChunk*> chunks;
 

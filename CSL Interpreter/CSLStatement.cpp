@@ -1,88 +1,137 @@
 #include "CSLStatement.h"
 
 #include <iostream>
+#include <Arc/StringFunctions.h>
+
+string CSLStatement::readNextChunk( const string& data )
+{
+	string tmp;
+	bool isCmd = false;
+	bool isFunc = false;
+
+	const char& first = data.front();
+	const char& next = (data.length() >= 1 ? data[1] : 0);
+
+	if ((first == '+' && next == '+') ||
+		(first == '-' && next == '-') ||
+		(first == '&' && next == '&') ||
+		(first == '|' && next == '|') ||
+		( (first == '+' ||
+		   first == '-' ||
+		   first == '*' ||
+		   first == '/' ||
+		   first == '%' ||
+		   first == '=' ||
+		   first == '<' ||
+		   first == '>' ||
+		   first == '!')
+		  && next == '='))
+	{
+		addOperatorChunk(data.substr(0, 2));
+		tmp = data.substr(2);
+		Arc_Trim(tmp);
+		return tmp;
+	}
+
+	if (first == '+' ||
+		first == '-' ||
+		first == '*' ||
+		first == '/' ||
+		first == '%' ||
+		first == '=' ||
+		first == '>' ||
+		first == '<' ||
+		first == '!' ||
+		first == '&' ||
+		first == '|')
+	{
+		addOperatorChunk(data.substr(0, 1));
+		tmp = data.substr(1);
+		Arc_Trim(tmp);
+		return tmp;
+	}
+
+	if (first == '\'')
+	{
+		for (unsigned int i = 1; i < data.length(); ++i)
+		{
+			if (data[i] == '\'')
+			{
+				addConstStringChunk(data.substr(1, i - 1));
+				tmp = data.substr(i + 1);
+				Arc_Trim(tmp);
+				return tmp;
+			}
+		}
+
+		return "";
+	}
+
+	if (first == '@')
+	{
+		string varName = "";
+
+		for (unsigned int i = 1; i < data.length(); ++i)
+		{
+			const char& ch = data[i];
+
+			if (ch == ' ' || 
+				ch == '+' ||
+				ch == '-' ||
+				ch == '*' ||
+				ch == '/' ||
+				ch == '%' ||
+				ch == '=' ||
+				ch == '>' ||
+				ch == '<' ||
+				ch == '!' ||
+				ch == '&' ||
+				ch == '|')
+			{
+				break;
+			}
+
+			varName += ch;
+		}
+
+		addVariableChunk(varName);
+		tmp = data.substr(varName.length() + 1);
+		Arc_Trim(tmp);
+		return tmp;
+	}
+
+	string cmd = "";
+	for (unsigned int i = 0; i < NUM_COMMANDS; ++i)
+	{
+		if (data.substr(0, CSL_COMMANDS[i].length()) == CSL_COMMANDS[i])
+		{
+			isCmd = true;
+			cmd = CSL_COMMANDS[i];
+			break;
+		}
+	}
+
+	if (isCmd)
+	{
+		addCommandChunk(cmd);
+		tmp = data.substr(cmd.length());
+		Arc_Trim(tmp);
+		return tmp;
+	}
+
+	return "";
+}
+
 
 bool CSLStatement::buildStatement( const string& stmt )
 {
-	string tmp = "";
+	if (stmt.length() == 0)
+		return false;
 
-	bool inString = false;
-	char ch = 0;
-	char last = 0;
-	char next = 0;
-	for (unsigned int i = 0; i < stmt.length(); ++i)
+	string tmp = stmt;
+	while (tmp.length() > 0)
 	{
-		last = ch;
-		ch = stmt[i];
-		next = (stmt.length() > i + 1 ? stmt[i + 1] : 0);
-
-		if (inString)
-		{
-			if (last != '\\' && ch == '\'')
-			{
-				inString = false;
-				addConstStringChunk(tmp);
-				tmp = "";
-			}
-			else if (ch != '\\')
-				tmp += ch;
-		}
-		else
-		{
-			if (last != '\\' && ch == '\'')
-			{
-				inString = true;
-			}
-			else if (ch != '\\')
-			{
-				if (ch == '+' || 
-					ch == '=' ||
-					ch == '*' ||
-					ch == '/' || 
-					ch == '%' ||
-					ch == '>' ||
-					ch == '<' ||
-					ch == '!' ||
-					ch == '&' ||
-					ch == '|')
-				{
-					if (tmp.length() > 0)
-					{
-						addChunk(tmp);
-						tmp = "";
-						tmp += ch;
-					}
-
-					if ((ch == '+' && next == '+') ||
-						(ch == '-' && next == '-') ||
-						(ch == '&' && next == '&') ||
-						(ch == '|' && next == '|') ||
-						( (ch == '+' ||
-						   ch == '-' || 
-						   ch == '*' ||
-						   ch == '/' ||
-						   ch == '%' ||
-						   ch == '=' ||
-						   ch == '<' ||
-						   ch == '>' ||
-						   ch == '!')
-						 && next == '='))
-					{
-						tmp += next;
-						addOperatorChunk(tmp);
-						tmp = "";
-						++i;
-					}
-				}
-				else if (ch == ' ')
-				{
-					addChunk(tmp);
-					tmp = "";
-				}
-				else
-					tmp += ch;
-			}
-		}
+		tmp = readNextChunk(tmp);
 	}
 
 	return false;
@@ -187,6 +236,7 @@ bool CSLStatement::addParenthesisChunk( const string& inner )
 
 bool CSLStatement::execute( void )
 {
+	cout << endl;
 	return false;
 }
 
