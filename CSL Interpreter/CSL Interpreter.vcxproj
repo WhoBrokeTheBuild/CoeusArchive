@@ -71,6 +71,7 @@
   <ItemGroup>
     <ClCompile Include="CSLChunks.cpp" />
     <ClCompile Include="CSLStatement.cpp" />
+    <ClCompile Include="Interpreter.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +80,7 @@
     <ClInclude Include="CSLCommand.h" />
     <ClInclude Include="CSLOperator.h" />
     <ClInclude Include="CSLStatement.h" />
+    <ClInclude Include="Interpreter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

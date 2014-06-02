@@ -232,14 +232,13 @@ string CSLStatement::readNextChunk( const string& data )
 	return "";
 }
 
-
 bool CSLStatement::buildStatement( const string& stmt )
 {
 	if (stmt.length() == 0)
 		return false;
 
-	cout << endl << "<ul>" << endl << endl;
-	cout << "<li><b>Base: " << stmt << "</b></li>" << endl;
+	//cout << endl << "<ul>" << endl << endl;
+	//cout << "<li><b>Base: " << stmt << "</b></li>" << endl;
 
 	string tmp = stmt;
 	while (tmp.length() > 0)
@@ -247,7 +246,7 @@ bool CSLStatement::buildStatement( const string& stmt )
 		tmp = readNextChunk(tmp);
 	}
 
-	cout << endl << "</ul>" << endl << endl;
+	//cout << endl << "</ul>" << endl << endl;
 
 	return false;
 }
@@ -271,7 +270,7 @@ bool CSLStatement::addCommandChunk( const string& cmd )
 		return false;
 	}
 
-	cout << "<li>Command chunk: " << cmd << "</li>" << endl;
+	//cout << "<li>Command chunk: " << cmd << "</li>" << endl;
 
 	CSLCommandChunk* pChnk = New CSLCommandChunk(cmdType);
 	chunks.add(pChnk);
@@ -297,7 +296,7 @@ bool CSLStatement::addOperatorChunk( const string& op )
 		return false;
 	}
 
-	cout << "<li>Operator chunk: " << op << "</li>" << endl;
+	//cout << "<li>Operator chunk: " << op << "</li>" << endl;
 
 	CSLOperatorChunk* pChnk = New CSLOperatorChunk(opType);
 	chunks.add(pChnk);
@@ -309,7 +308,7 @@ bool CSLStatement::addVariableChunk( const string& name )
 	if (name.length() == 0)
 		return false;
 
-	cout << "<li>Variable chunk: @" << name << "</li>" << endl;
+	//cout << "<li>Variable chunk: @" << name << "</li>" << endl;
 
 	CSLVariableChunk* pChnk = New CSLVariableChunk(name);
 	chunks.add(pChnk);
@@ -318,7 +317,7 @@ bool CSLStatement::addVariableChunk( const string& name )
 
 bool CSLStatement::addConstStringChunk( const string& data )
 {
-	cout << "<li>Const String chunk: '" << data << "'</li>" << endl;
+	//cout << "<li>Const String chunk: '" << data << "'</li>" << endl;
 
 	CSLConstStringChunk* pChnk = New CSLConstStringChunk(data);
 	chunks.add(pChnk);
@@ -327,7 +326,7 @@ bool CSLStatement::addConstStringChunk( const string& data )
 
 bool CSLStatement::addConstIntChunk( const int& data )
 {
-	cout << "<li>Const Int chunk: " << data << "</li>" << endl;
+	//cout << "<li>Const Int chunk: " << data << "</li>" << endl;
 
 	CSLConstIntChunk* pChnk = New CSLConstIntChunk(data);
 	chunks.add(pChnk);
@@ -336,7 +335,7 @@ bool CSLStatement::addConstIntChunk( const int& data )
 
 bool CSLStatement::addConstFloatChunk( const float& data )
 {
-	cout << "<li>Const Float chunk: " << data << "</li>" << endl;
+	//cout << "<li>Const Float chunk: " << data << "</li>" << endl;
 
 	CSLConstFloatChunk* pChnk = New CSLConstFloatChunk(data);
 	chunks.add(pChnk);
@@ -345,17 +344,16 @@ bool CSLStatement::addConstFloatChunk( const float& data )
 
 bool CSLStatement::addFunctionChunk( const string& func, const ArrayList<string>& params )
 {
-	cout << "<li>Function chunk: " << func << "</li>" << endl;
+	//cout << "<li>Function chunk: " << func << "</li>" << endl;
 	return false;
 }
 
 bool CSLStatement::addStatementChunk( const string& stmt )
 {
-	cout << "<li>Statement chunk: " << stmt << "</li>" << endl;
+	//cout << "<li>Statement chunk: " << stmt << "</li>" << endl;
 
 	CSLStatement* pStmt = New CSLStatement();
 	pStmt->buildStatement(stmt);
-	pStmt->execute();
 
 	CSLStatementChunk* pChnk = New CSLStatementChunk(pStmt);
 	chunks.add(pChnk);
@@ -364,7 +362,56 @@ bool CSLStatement::addStatementChunk( const string& stmt )
 
 bool CSLStatement::execute( void )
 {
-	return false;
+	if (chunks.isEmpty())
+		return true;
+
+	CSLChunk* pChnk = chunks.getFront();
+
+	switch (pChnk->Type)
+	{
+	case CHUNK_TYPE_COMMAND:
+		{
+			CSLCommandChunk* pCmdChnk = (CSLCommandChunk*)pChnk;
+
+			switch (pCmdChnk->Command)
+			{
+			case COMMAND_OUT:
+
+				for (unsigned int i = 1; i < chunks.getSize(); ++i)
+				{
+					switch (chunks[i]->Type)
+					{
+					case CHUNK_TYPE_CONST_STRING:
+						{
+							CSLConstStringChunk* pTmp = (CSLConstStringChunk*)chunks[i];
+							cout << pTmp->Data;
+						}
+						break;
+					case CHUNK_TYPE_CONST_INT:
+						{
+							CSLConstIntChunk* pTmp = (CSLConstIntChunk*)chunks[i];
+							cout << pTmp->Data;
+						}
+						break;
+					case CHUNK_TYPE_CONST_FLOAT:
+						{
+							CSLConstFloatChunk* pTmp = (CSLConstFloatChunk*)chunks[i];
+							cout << pTmp->Data;
+						}
+						break;
+					case CHUNK_TYPE_VAR:
+
+						break;
+					}
+				}
+
+				break;
+			}
+		}
+		break;
+	}
+
+	return true;
 }
 
 CSLChunkType CSLStatement::findChunkType( const string& data )

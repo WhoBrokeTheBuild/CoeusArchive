@@ -21,6 +21,9 @@
     <ClCompile Include="CSLStatement.cpp">
       <Filter>Project\Statement</Filter>
     </ClCompile>
+    <ClCompile Include="Interpreter.cpp">
+      <Filter>Project</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CSLChunkType.h">
@@ -37,6 +40,9 @@
     </ClInclude>
     <ClInclude Include="CSLChunks.h">
       <Filter>Project\Statement</Filter>
+    </ClInclude>
+    <ClInclude Include="Interpreter.h">
+      <Filter>Project</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
