@@ -4,10 +4,39 @@
     <Filter Include="Project">
       <UniqueIdentifier>{c3669d16-0c83-4966-b1e9-4acde32ab1a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Project\Enums">
+      <UniqueIdentifier>{88f49a7e-b2f4-4b1f-8dc8-ffd31d8e18c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Statement">
+      <UniqueIdentifier>{bf532721-c04b-4cac-892b-8587b7a12439}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Project</Filter>
     </ClCompile>
+    <ClCompile Include="CSLChunks.cpp">
+      <Filter>Project\Statement</Filter>
+    </ClCompile>
+    <ClCompile Include="CSLStatement.cpp">
+      <Filter>Project\Statement</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CSLChunkType.h">
+      <Filter>Project\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="CSLCommand.h">
+      <Filter>Project\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="CSLOperator.h">
+      <Filter>Project\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="CSLStatement.h">
+      <Filter>Project\Statement</Filter>
+    </ClInclude>
+    <ClInclude Include="CSLChunks.h">
+      <Filter>Project\Statement</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

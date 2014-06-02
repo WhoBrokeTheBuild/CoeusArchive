@@ -14,50 +14,6 @@
     @i++
   
   endwhile
-  
-  do
-  
-    out '(do-while) Test ' + @i
-    @i++
-  
-  while (@i < 15)
 
 =>
 </ul>
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Email</th>
-  </tr>
-</tr>
-<=
-
-  sql_connect('localhost', 'root', 'Password1');
-  sql_select_db('test_db');
-
-  @query = 'SELECT * FROM `test`;'
-  @result = sql_run($query);
-  
-  @num_rows = sql_get_num_rows(@result);
-  for (@i = 0; @i < @num_rows; ++@i)
-  
-    =>
-    <tr>
-    <=
-  
-    @row = sql_get_row(@result, @i);
-    
-    =>
-    <td><= out @row['id'] =></td>
-    <td><= out @row['name'] =></td>
-    <td><= out @row['email'] =></td>
-    <=
-    
-    =>
-    </tr>
-    <=
-  
-  endfor
-  
-=>

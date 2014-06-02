@@ -7,6 +7,21 @@
 using namespace std;
 using namespace Arc;
 
+#include "CSLStatement.h"
+
+void processStatement( const string& stmt )
+{
+	string tmpStmt = stmt;
+	Arc_Trim(tmpStmt);
+
+	if (tmpStmt.length() == 0)
+		return;
+
+	CSLStatement stmtObj;
+	stmtObj.buildStatement(tmpStmt);
+	stmtObj.execute();
+}
+
 int main( int argc, char* argv[] )
 {
 	if (argc <= 1)
@@ -28,6 +43,11 @@ int main( int argc, char* argv[] )
 	buff.setDataFromStream(file);
 
 	bool inCSL = false;
+	bool inString = false;
+	bool inParen = false;
+	bool inLineComment = false;
+	bool inBlockComment = false;
+	string stmt = "";
 
 	while ( ! buff.endOfBuffer())
 	{
@@ -37,12 +57,57 @@ int main( int argc, char* argv[] )
 
 		if (inCSL)
 		{
-			if (ch == '=' && next == '>')
+			if ( ! inString)
 			{
-				inCSL = false;
-				buff.setReadIndex(buff.getReadIndex() + 1);
-				continue;
+				if ( ! inBlockComment && (ch == '/' && next == '*'))
+				{
+					inBlockComment = true;
+					buff.setReadIndex(buff.getReadIndex() + 1);
+					continue;
+				}
+				else if (inBlockComment && (ch == '*' && next == '/'))
+				{
+					inBlockComment = false;
+					buff.setReadIndex(buff.getReadIndex() + 1);
+					continue;
+				}
+				else if (ch == '/' && next == '/')
+				{
+					inLineComment = true;
+					buff.setReadIndex(buff.getReadIndex() + 1);
+					continue;
+				}
+				else if (ch == '=' && next == '>')
+				{
+					if (stmt.length() > 0)
+					{
+						processStatement(stmt);
+						stmt = "";
+					}
+
+					inCSL = false;
+					buff.setReadIndex(buff.getReadIndex() + 1);
+					continue;
+				}
+				else if (ch == '\n')
+				{
+					inLineComment = false;
+					processStatement(stmt);
+					stmt = "";
+					continue;
+				}
+				else if (ch == '\'')
+				{
+					inString = true;
+				}
 			}
+			else if (ch == '\'')
+			{
+				inString = false;
+			}
+
+			if ( ! inLineComment && ! inBlockComment)
+				stmt += ch;
 		}
 		else
 		{
@@ -56,6 +121,8 @@ int main( int argc, char* argv[] )
 			printf("%c", ch);
 		}
 	}
+
+	system("PAUSE");
 
 	return 0;
 }

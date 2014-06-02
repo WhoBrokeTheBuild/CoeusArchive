@@ -1,0 +1,31 @@
+#ifndef COEUS_CSL_INTERPRETER_CSL_COMMAND_H
+#define COEUS_CSL_INTERPRETER_CSL_COMMAND_H
+
+enum CSLCommand
+{
+	INVALID_COMMAND = -1,
+
+	COMMAND_OUT,
+
+	COMMAND_FOR,
+	COMMAND_ENDFOR,
+	COMMAND_WHILE,
+	COMMAND_ENDWHILE,
+	COMMAND_IF,
+	COMMAND_ENDIF,
+
+	NUM_COMMANDS
+};
+
+const string CSL_COMMANDS[NUM_COMMANDS] = 
+{
+	"out",
+	"for",
+	"endfor",
+	"while",
+	"endwhile",
+	"if",
+	"endif"
+};
+
+#endif // COEUS_CSL_INTERPRETER_CSL_COMMAND_H
