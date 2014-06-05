@@ -28,8 +28,6 @@ public:
 
 	bool buildStatement( const string& stmt );
 
-	bool addChunk( const string& chnk );
-
 	bool addCommandChunk( const string& cmd );
 	bool addOperatorChunk( const string& op );
 	bool addVariableChunk( const string& name );
@@ -39,7 +37,7 @@ public:
 	bool addConstFloatChunk( const float& data );
 
 	bool addFunctionChunk( const string& func, const ArrayList<string>& params );
-	bool addParenthesisChunk( const string& inner );
+	bool addStatementChunk( const string& stmt );
 
 	bool execute( void );
 

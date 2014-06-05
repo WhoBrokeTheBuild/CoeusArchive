@@ -1,19 +1,21 @@
 <h1>Hello, World!</h1>
 <ul>
+<pre>
 <=
 
   for (@i = 0; @i < 5; ++@i)
 
-    out '(for) Test ' + @i
+    out '(for) Test ' @i '\n'
 
   endfor
   
   while (@i < 10)
   
-    out '(while) Test ' + @i
+    out '(while) Test ' @i '\n'
     @i++
   
   endwhile
 
 =>
+</pre>
 </ul>
