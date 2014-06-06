@@ -1084,3 +1084,4 @@
 +0.0.6.205 INF <server.cpp:218> Server: S: Location: http://localhost:8080/files/
 +0.0.6.210 INF <server.cpp:218> Server: S: Content-Type: text/html
 +0.0.6.214 INF <server.cpp:218> Server: S: Content-Size: 651
++0.0.0.27 INF <server.cpp:46> Server: Listening on port 8080
