@@ -1085,3 +1085,63 @@
 +0.0.6.210 INF <server.cpp:218> Server: S: Content-Type: text/html
 +0.0.6.214 INF <server.cpp:218> Server: S: Content-Size: 651
 +0.0.0.27 INF <server.cpp:46> Server: Listening on port 8080
++0.0.0.23 INF <server.cpp:46> Server: Listening on port 8080
++0.0.13.564 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.13.569 INF <server.cpp:197> Server: C: GET /
++0.0.0.16 INF <server.cpp:46> Server: Listening on port 8080
++0.0.2.595 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.2.605 INF <server.cpp:197> Server: C: GET /
++0.0.0.14 INF <server.cpp:46> Server: Listening on port 8080
++0.0.6.824 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.6.835 INF <server.cpp:197> Server: C: GET /
++0.0.0.15 INF <server.cpp:46> Server: Listening on port 8080
++0.0.3.469 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.3.473 INF <server.cpp:197> Server: C: GET /
++0.0.0.189 INF <server.cpp:46> Server: Listening on port 8080
++0.0.3.872 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.3.877 INF <server.cpp:197> Server: C: GET /
++0.0.0.199 INF <server.cpp:46> Server: Listening on port 8080
++0.0.2.388 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.0.100 INF <server.cpp:46> Server: Listening on port 8080
++0.0.3.183 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.5.383 INF <server.cpp:197> Server: C: GET /
++0.0.0.108 INF <server.cpp:46> Server: Listening on port 8080
++0.0.2.108 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.0.78 INF <server.cpp:46> Server: Listening on port 8080
++0.0.7.59 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.7.66 INF <server.cpp:197> Server: C: GET /
++0.0.0.103 INF <server.cpp:46> Server: Listening on port 8080
++0.0.15.88 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.15.97 INF <server.cpp:197> Server: C: GET /
++0.0.0.140 INF <server.cpp:46> Server: Listening on port 8080
++0.0.2.914 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.2.923 INF <server.cpp:197> Server: C: GET /
++0.0.0.140 INF <server.cpp:46> Server: Listening on port 8080
++0.0.6.892 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.6.897 INF <server.cpp:197> Server: C: GET / HTTP/1.0
++0.0.6.901 INF <server.cpp:164> Server: C: User-Agent: Arc
++0.0.6.905 INF <server.cpp:179> Server: Read 1 Headers
++0.0.6.914 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.0.6.916 INF <server.cpp:218> Server: S: Server: Coeus 0.3
++0.0.6.920 INF <server.cpp:218> Server: S: Location: http:///
++0.0.6.921 INF <server.cpp:218> Server: S: Content-Type: text/html
++0.0.6.925 INF <server.cpp:218> Server: S: Content-Size: 174
++0.0.6.928 INF <server.cpp:146> Server: Sending File: <html/index.html>
++0.4.275.412 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.4.275.417 INF <server.cpp:197> Server: C: GET / HTTP/1.0
++0.4.275.421 INF <server.cpp:164> Server: C: User-Agent: Arc
++0.4.275.432 INF <server.cpp:179> Server: Read 1 Headers
++0.4.275.437 INF <server.cpp:218> Server: S: HTTP/1.0 200 OK
++0.4.275.441 INF <server.cpp:146> Server: Sending File: <html/index.html>
++0.6.377.39 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.0.91 INF <server.cpp:46> Server: Listening on port 8080
++0.0.4.189 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.4.198 INF <server.cpp:196> Server: C: GET / HTTP/1.0
++0.0.4.202 INF <server.cpp:163> Server: C: User-Agent: Arc
++0.0.4.204 INF <server.cpp:178> Server: Read 1 Headers
++0.0.4.208 INF <server.cpp:217> Server: S: HTTP/1.0 200 OK
++0.0.4.211 INF <server.cpp:217> Server: S: Server: Coeus 0.3
++0.0.4.214 INF <server.cpp:217> Server: S: Location: http:///
++0.0.4.217 INF <server.cpp:217> Server: S: Content-Type: text/html
++0.0.4.221 INF <server.cpp:217> Server: S: Content-Size: 174
++0.0.4.223 INF <server.cpp:145> Server: Sending File: <html/index.html>

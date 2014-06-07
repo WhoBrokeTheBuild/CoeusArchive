@@ -60,7 +60,6 @@ bool Server::run( void )
 			Log::Error(getClassName(), "Malformed Request");
 			mp_CurrClient->disconnect();
 			delete mp_CurrClient;
-			delete mp_ServerSocket;
 			continue;
 		}
 
