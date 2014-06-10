@@ -32,8 +32,8 @@ namespace Arc
 	//bool Arc_DirExists( const string& filename );
 	//
 	//bool Arc_IsDir( const string& filename );
-
-	bool Arc_CreateDir( const string& filename );
+	//
+	//bool Arc_CreateDir( const string& filename );
 
 }
 

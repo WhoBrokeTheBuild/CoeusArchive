@@ -10,9 +10,6 @@
     <Filter Include="Project\Util">
       <UniqueIdentifier>{d63db666-99aa-41ac-99ef-4914870f3ac4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="3rdParty">
-      <UniqueIdentifier>{856a7721-10cc-4b55-a245-808f687ce1b7}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

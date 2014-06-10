@@ -126,12 +126,12 @@ public:
 	string readNextString( unsigned int size );
 	string readNextStringWithLength( void );
 	string readNextLine( void );
-	bool readNextBool( void );
-	short readNextShort( void );
-	int readNextInt( void );
-	long readNextLong( void );
-	char readNextChar( void );
-	float readNextFloat( void );
+	bool   readNextBool( void );
+	short  readNextShort( void );
+	int    readNextInt( void );
+	long   readNextLong( void );
+	char   readNextChar( void );
+	float  readNextFloat( void );
 	double readNextDouble( void );
 
 	inline bool endOfBuffer( void ) { return (m_ReadIndex >= m_EndOfUsed); }
@@ -139,12 +139,12 @@ public:
 	string readStringAt( unsigned long offset, unsigned int size );
 	string readStringWithLengthAt( unsigned long offset );
 	string readLineAt( unsigned long offset );
-	bool readBoolAt( unsigned long offset );
-	short readShortAt( unsigned long offset );
-	int readIntAt( unsigned long offset );
-	long readLongAt( unsigned long offset );
-	char readCharAt( unsigned long offset );
-	float readFloatAt( unsigned long offset );
+	bool   readBoolAt( unsigned long offset );
+	short  readShortAt( unsigned long offset );
+	int    readIntAt( unsigned long offset );
+	long   readLongAt( unsigned long offset );
+	char   readCharAt( unsigned long offset );
+	float  readFloatAt( unsigned long offset );
 	double readDoubleAt( unsigned long offset );
 
 	bool writeToStream( std::ostream& stream ) const;

@@ -1145,3 +1145,4 @@
 +0.0.4.217 INF <server.cpp:217> Server: S: Content-Type: text/html
 +0.0.4.221 INF <server.cpp:217> Server: S: Content-Size: 174
 +0.0.4.223 INF <server.cpp:145> Server: Sending File: <html/index.html>
++0.0.0.277 INF <server.cpp:46> Server: Listening on port 8080

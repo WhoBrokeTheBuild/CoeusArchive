@@ -144,6 +144,22 @@ public:
 	Arc_uint16_t recvUInt16( void ) { return recvData<Arc_uint16_t>(); }
 	Arc_int32_t  recvInt32 ( void ) { return recvData<Arc_int32_t>(); }
 	Arc_uint32_t recvUInt32( void ) { return recvData<Arc_uint32_t>(); }
+	
+#if defined(ARC_OS_WINDOWS)
+
+	/* 
+	 * @returns: The windows system reference to the socket
+	 */
+    SOCKET getRawSocket( void ) const { return m_Socket; }
+
+#elif defined(ARC_OS_LINUX)
+
+	/* 
+	 * @returns: The linux system reference to the socket
+	 */
+    int getRawSocket( void ) const { return m_Socket; }
+
+#endif
 
 protected:
 
@@ -196,20 +212,10 @@ protected:
 	// The windows system reference to the socket
     SOCKET m_Socket;
 
-	/* 
-		* @returns: The windows system reference to the socket
-		*/
-    SOCKET getWinSocket( void ) const { return m_Socket; }
-
 #elif defined(ARC_OS_LINUX)
 
 	// The linux system reference to the socket
     int m_Socket;
-		
-	/* 
-		* @returns: The linux system reference to the socket
-		*/
-    int getUnixSocket( void ) const { return m_Socket; }
 
 #endif
 
