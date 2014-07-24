@@ -457,7 +457,8 @@ bool database_exists( const string& name )
 
 bool create_database( const string& name )
 {
-	return Arc_CreateDir(DB_ROOT + name);
+	return false;
+	//return Arc_CreateDir(DB_ROOT + name);
 }
 
 bool drop_database( const string& name )
