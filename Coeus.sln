@@ -11,8 +11,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CSL Interpreter", "CSL Inte
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MailServer", "MailServer\MailServer.vcxproj", "{221512AD-DBEB-4A94-AC56-209FAC37ACCF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WebServerWorker", "WebServerWorker\WebServerWorker.vcxproj", "{36BB69EE-6D51-4F07-908C-5F1A3339A2DE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -39,10 +37,6 @@ Global
 		{221512AD-DBEB-4A94-AC56-209FAC37ACCF}.Debug|Win32.Build.0 = Debug|Win32
 		{221512AD-DBEB-4A94-AC56-209FAC37ACCF}.Release|Win32.ActiveCfg = Release|Win32
 		{221512AD-DBEB-4A94-AC56-209FAC37ACCF}.Release|Win32.Build.0 = Release|Win32
-		{36BB69EE-6D51-4F07-908C-5F1A3339A2DE}.Debug|Win32.ActiveCfg = Debug|Win32
-		{36BB69EE-6D51-4F07-908C-5F1A3339A2DE}.Debug|Win32.Build.0 = Debug|Win32
-		{36BB69EE-6D51-4F07-908C-5F1A3339A2DE}.Release|Win32.ActiveCfg = Release|Win32
-		{36BB69EE-6D51-4F07-908C-5F1A3339A2DE}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
