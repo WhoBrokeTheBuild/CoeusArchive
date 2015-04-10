@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 #include <Arc/StringFunctions.h>
 
 using namespace std;
@@ -22,7 +23,7 @@ bool ServerConfig::loadMainConfig( const string& filename )
 		if (line.length() != 0 && line[0] == '#')
 			continue;
 
-		unsigned int endOfCmd = std::min(line.find(' '), line.find('\t'));
+		unsigned int endOfCmd = min(line.find(' '), line.find('\t'));
 
 		if (endOfCmd == string::npos)
 			continue;

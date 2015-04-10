@@ -28,6 +28,8 @@ public:
 	inline int getVersionMajor( void ) const { return 0; }
 	inline int getVersionMinor( void ) const { return 3; }
 
+	ServerConfig* getServerConfig();
+
 	bool run( void );
 
 protected:
@@ -43,7 +45,7 @@ protected:
 	bool sendFile( std::ifstream& file );
 	void sendDirectoryList( const string& path, const string& realPath );
 
-	void spawnWorker( const unsigned int& socketID );
+	static void spawnWorker( Server* pServer, Socket* pSocket );
 
 	ServerConfig*		mp_ServerConfig;
 

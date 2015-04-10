@@ -45,11 +45,11 @@ namespace Arc
 
 #if defined(_DEBUG) || defined(DEBUG)
 
-#define ARC_DEBUG_BUILD
+#define ARC_BUILD_DEBUG
 
 #elif defined(_RELEASE) || defined(RELEASE)
 
-#define ARC_RELEASE_BUILD
+#define ARC_BUILD_RELEASE
 
 #endif
 

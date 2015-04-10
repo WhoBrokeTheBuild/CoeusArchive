@@ -5,8 +5,12 @@
 
 #include <Arc/Log.h>
 #include <dirent.h>
+#include <thread>
 
 #include "ServerConfig.h"
+#include "Worker.h"
+
+using namespace std;
 
 Server::Server( void )
 {
@@ -30,6 +34,11 @@ Server::~Server( void )
 	delete mp_ServerSocket;
 }
 
+ServerConfig* Server::getServerConfig(void)
+{
+	return mp_ServerConfig;
+}
+
 bool Server::run( void )
 {
 	mp_ServerSocket = New ServerSocket();
@@ -50,16 +59,15 @@ bool Server::run( void )
 		mp_CurrClient = mp_ServerSocket->acceptClient();
 		Log::InfoFmt(getClassName(), "Connection from %s", mp_CurrClient->getAddress().toString().c_str());
 
-		unsigned int socketID = mp_CurrClient->getRawSocket();
-
-		spawnWorker(socketID);
-
-		delete mp_CurrClient;
+		thread workerThread(Server::spawnWorker, this, mp_CurrClient);
+		workerThread.detach();
 	}
 }
 
 
-void Server::spawnWorker( const unsigned int& socketID )
+void Server::spawnWorker( Server* pServer, Socket* pSocket )
 {
-
+	Worker worker(pServer, pSocket);
+	worker.run();
+	delete pSocket;
 }

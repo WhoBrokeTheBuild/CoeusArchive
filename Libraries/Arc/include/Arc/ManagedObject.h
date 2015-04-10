@@ -54,7 +54,7 @@ public:
 	inline void operator delete  ( void *ptr, int lineNumber, const char *filename ) { ::operator delete(ptr); }
 	inline void operator delete[]( void *ptr, int lineNumber, const char *filename ) { ::operator delete[](ptr); }
 
-#ifdef ARC_DEBUG_BUILD
+#ifdef ARC_BUILD_DEBUG
 
 // Used to pass the filename and line number into the placement new operator
 #define New new(__LINE__, __FILE__)

@@ -1,34 +1,27 @@
-#include <iostream>
-#include <sstream>
-#include <fstream>
+#include "Worker.h"
 
-#include <dirent.h>
+#include "Server.h"
+#include "ServerConfig.h"
 
-#include <Arc/ArcCore.h>
-#include <Arc/Log.h>
+Worker::~Worker()
+{
+}
 
-#include <Arc/Socket.h>
-
-using namespace std;
-using namespace Arc;
-
-const string NAME = "Coeus Web Server Worker";
-
-Map<string, string> getHeaders( Socket* pCurrClient )
+Map<string, string> Worker::getHeaders()
 {
 	Map<string, string> headers;
 	string line;
 	while (true)
 	{
-		line = pCurrClient->recvLine();
+		line = mp_CurrClient->recvLine();
 		if (line == "") break;
 
-		Log::InfoFmt(NAME, "C: %s", line.c_str());
+		Log::InfoFmt(getClassName(), "C: %s", line.c_str());
 
 		ArrayList<string> split = Arc_StringSplit(line, ':', 2);
 		if (split.getSize() < 2)
 		{
-			Log::Error(NAME, "Malformed Header");
+			Log::Error(getClassName(), "Malformed Header");
 			continue;
 		}
 		Arc_TrimRight(split[0]);
@@ -37,13 +30,12 @@ Map<string, string> getHeaders( Socket* pCurrClient )
 
 		headers.add(split[0], split[1]);
 	}
-
-	Log::InfoFmt(NAME, "Read %d Headers", headers.getSize());
+	Log::InfoFmt(getClassName(), "Read %d Headers", headers.getSize());
 
 	return headers;
 }
 
-std::streamsize getFileSize( std::ifstream& file )
+std::streamsize Worker::getFileSize(std::ifstream& file)
 {
 	std::streampos fsize = file.tellg();
 	file.seekg(0, std::ios::end);
@@ -53,19 +45,19 @@ std::streamsize getFileSize( std::ifstream& file )
 	return fsize;
 }
 
-string recvLine( Socket* pCurrClient )
+string Worker::recvLine()
 {
-	const string& line =  pCurrClient->recvLine();
-	Log::InfoFmt(NAME, "C: %s", line.c_str());
+	const string& line = mp_CurrClient->recvLine();
+	Log::InfoFmt(getClassName(), "C: %s", line.c_str());
 
 	return line;
 }
 
-bool sendString( Socket* pCurrClient, const string& str )
+bool Worker::sendString(const string& str)
 {
-	if (pCurrClient->sendString(str, false) > 0)
+	if (mp_CurrClient->sendString(str, false) > 0)
 	{
-		Log::InfoFmt(NAME, "S: %s", str.c_str());
+		Log::InfoFmt(getClassName(), "S: %s", str.c_str());
 
 		return true;
 	}
@@ -73,11 +65,11 @@ bool sendString( Socket* pCurrClient, const string& str )
 	return false;
 }
 
-bool sendLine( Socket* pCurrClient, const string& line )
+bool Worker::sendLine(const string& line)
 {
-	if (pCurrClient->sendString(line + "\r\n", false) > 0)
+	if (mp_CurrClient->sendString(line + "\r\n", false) > 0)
 	{
-		Log::InfoFmt(NAME, "S: %s", line.c_str());
+		Log::InfoFmt(getClassName(), "S: %s", line.c_str());
 
 		return true;
 	}
@@ -85,12 +77,12 @@ bool sendLine( Socket* pCurrClient, const string& line )
 	return false;
 }
 
-bool sendFile( Socket* pCurrClient, std::ifstream& file )
+bool Worker::sendFile(std::ifstream& file)
 {
-	if ( ! pCurrClient || pCurrClient->hasError())
+	if (!mp_CurrClient || mp_CurrClient->hasError())
 		return false;
 
-	if ( ! file)
+	if (!file)
 		return false;
 
 	const int TMP_BUFFER_SIZE = 4096;
@@ -105,17 +97,16 @@ bool sendFile( Socket* pCurrClient, std::ifstream& file )
 		if (n == 0)
 			break;
 
-		pCurrClient->sendBuffer(tmp_buffer, (unsigned int)n);
+		mp_CurrClient->sendBuffer(tmp_buffer, (unsigned int)n);
 
-		if ( ! file )
+		if (!file)
 			break;
-	}
-	while (n > 0);
+	} while (n > 0);
 
 	return true;
 }
 
-void sendDirectoryList( Socket* pCurrClient, const string& path, const string& realPath )
+void Worker::sendDirectoryList(const string& path, const string& realPath)
 {
 	stringstream output;
 
@@ -132,15 +123,15 @@ void sendDirectoryList( Socket* pCurrClient, const string& path, const string& r
 	struct dirent *ent;
 
 	dir = opendir(realPath.c_str());
-	if (dir != NULL) 
+	if (dir != NULL)
 	{
-		while ((ent = readdir (dir)) != NULL)
+		while ((ent = readdir(dir)) != NULL)
 		{
 			string type = "";
 			string name = string(ent->d_name);
 			string href = "";
 
-			switch (ent->d_type) 
+			switch (ent->d_type)
 			{
 			case DT_REG:
 
@@ -194,16 +185,15 @@ void sendDirectoryList( Socket* pCurrClient, const string& path, const string& r
 
 	stringstream contentSizeHeader;
 	contentSizeHeader << "Content-Size: " << outStr.length();
-	sendLine(pCurrClient, contentSizeHeader.str());
+	sendLine(contentSizeHeader.str());
 
-	pCurrClient->sendString("\r\n", false);
+	mp_CurrClient->sendString("\r\n", false);
 
-	pCurrClient->sendString(outStr, false);
+	mp_CurrClient->sendString(outStr, false);
 }
 
-int main( int argc, char* argv[] )
+bool Worker::run()
 {
-	Socket* pCurrClient;
 	bool directoryListing = false;
 
 	const string& request = recvLine();
@@ -211,10 +201,10 @@ int main( int argc, char* argv[] )
 
 	if (requestPieces.getSize() < 3)
 	{
-		Log::Error(NAME, "Malformed Request");
-		pCurrClient->disconnect();
-		delete pCurrClient;
-		exit;
+		Log::Error(getClassName(), "Malformed Request");
+		mp_CurrClient->disconnect();
+		delete mp_CurrClient;
+		return false;
 	}
 
 	const string& method = requestPieces[0];
@@ -223,14 +213,14 @@ int main( int argc, char* argv[] )
 
 	Map<string, string>& headers = getHeaders();
 
-	string realPath = mp_ServerConfig->getWebRoot() + path;
+	string realPath = mp_Server->getServerConfig()->getWebRoot() + path;
 
 	ifstream file;
 
 	if (realPath.back() == '/')
 	{
 		bool defaultFound = false;
-		const ArrayList<string>& defaults = mp_ServerConfig->getDefaults();
+		const ArrayList<string>& defaults = mp_Server->getServerConfig()->getDefaults();
 		for (auto it = defaults.itConstBegin(); it != defaults.itConstEnd(); ++it)
 		{
 			const string& def = (*it);
@@ -244,7 +234,7 @@ int main( int argc, char* argv[] )
 			}
 		}
 
-		if ( ! defaultFound)
+		if (!defaultFound)
 		{
 			directoryListing = true;
 		}
@@ -252,53 +242,54 @@ int main( int argc, char* argv[] )
 	else
 		file.open(realPath, ios::in | ios::binary);
 
-	if ( ! directoryListing && ! file)
+	if (!directoryListing && !file)
 	{
 		const string& response = "HTTP/1.0 404 Not Found";
-		sendLine(pCurrClient, response);
+		sendLine(response);
 
 		file.close();
-		file.open(mp_ServerConfig->getWebRoot() + "/" + mp_ServerConfig->getErrorPage404());
+		file.open(mp_Server->getServerConfig()->getWebRoot() + "/" + mp_Server->getServerConfig()->getErrorPage404());
 	}
 	else
 	{
 		const string& response = "HTTP/1.0 200 OK";
-		sendLine(pCurrClient, response);
+		sendLine(response);
 	}
 
-	const string& serverHeader = "Server: Coeus " + mp_ServerConfig->getVersionString();
-	sendLine(pCurrClient, serverHeader);
+	const string& serverHeader = "Server: Coeus " + mp_Server->getVersionString();
+	sendLine(serverHeader);
 
 	stringstream locationHeader;
 	locationHeader << "Location: http://" << headers["host"] << path;
-	sendLine(pCurrClient, locationHeader.str());
+	sendLine(locationHeader.str());
 
 	if (directoryListing)
 	{
-		sendLine(pCurrClient, "Content-Type: text/html");
+		sendLine("Content-Type: text/html");
 
-		sendDirectoryList(pCurrClient, path, realPath);
+		sendDirectoryList(path, realPath);
 	}
 	else
 	{
 		string ext = Arc_FileExtension(realPath);
-		string mimeType = mp_ServerConfig->getMIMEType(ext);
+		string mimeType = mp_Server->getServerConfig()->getMIMEType(ext);
 
 		stringstream contentTypeHeader;
 		contentTypeHeader << "Content-Type: " << mimeType;
-		sendLine(pCurrClient, contentTypeHeader.str());
+		sendLine(contentTypeHeader.str());
 
 		const std::streamsize& fileSize = getFileSize(file);
 
 		stringstream contentSizeHeader;
 		contentSizeHeader << "Content-Size: " << fileSize;
-		sendLine(pCurrClient, contentSizeHeader.str());
+		sendLine(contentSizeHeader.str());
 
-		pCurrClient->sendString("\r\n", false);
+		mp_CurrClient->sendString("\r\n", false);
 
-		Log::InfoFmt(NAME, "Sending File: <%s>", realPath.c_str());
-		sendFile(pCurrClient, file);
+		Log::InfoFmt(getClassName(), "Sending File: <%s>", realPath.c_str());
+		sendFile(file);
 	}
 
-	pCurrClient->disconnect();
+	mp_CurrClient->disconnect();
+	return true;
 }
