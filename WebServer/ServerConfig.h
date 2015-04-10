@@ -7,6 +7,8 @@
 #include <Arc/Map.h>
 #include <Arc/ArrayList.h>
 
+#include <Arc/Buffer.h>
+
 using namespace Arc;
 
 class ServerConfig :

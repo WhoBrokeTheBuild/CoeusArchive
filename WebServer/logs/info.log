@@ -1146,3 +1146,38 @@
 +0.0.4.221 INF <server.cpp:217> Server: S: Content-Size: 174
 +0.0.4.223 INF <server.cpp:145> Server: Sending File: <html/index.html>
 +0.0.0.277 INF <server.cpp:46> Server: Listening on port 8080
++0.0.0.103 INF <server.cpp:46> Server: Listening on port 8080
++0.0.7.381 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.7.387 INF <server.cpp:53> Server: Socket: 132
++0.0.7.388 INF <server.cpp:198> Server: C: GET / HTTP/1.1
++0.0.7.392 INF <server.cpp:165> Server: C: Host: localhost:8080
++0.0.7.395 INF <server.cpp:165> Server: C: Connection: keep-alive
++0.0.7.399 INF <server.cpp:165> Server: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
++0.0.7.405 INF <server.cpp:165> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36
++0.0.7.414 INF <server.cpp:165> Server: C: Accept-Encoding: gzip,deflate,sdch
++0.0.7.418 INF <server.cpp:165> Server: C: Accept-Language: en-US,en;q=0.8
++0.0.7.421 INF <server.cpp:180> Server: Read 6 Headers
++0.0.7.434 INF <server.cpp:219> Server: S: HTTP/1.0 200 OK
++0.0.7.439 INF <server.cpp:219> Server: S: Server: Coeus 0.3
++0.0.7.441 INF <server.cpp:219> Server: S: Location: http://localhost:8080/
++0.0.7.445 INF <server.cpp:219> Server: S: Content-Type: text/html
++0.0.7.448 INF <server.cpp:219> Server: S: Content-Size: 174
++0.0.7.451 INF <server.cpp:147> Server: Sending File: <html/index.html>
++0.0.7.456 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.7.475 INF <server.cpp:53> Server: Socket: 136
++0.0.8.319 INF <server.cpp:198> Server: C: GET /favicon.ico HTTP/1.1
++0.0.8.335 INF <server.cpp:165> Server: C: Host: localhost:8080
++0.0.8.338 INF <server.cpp:165> Server: C: Connection: keep-alive
++0.0.8.347 INF <server.cpp:165> Server: C: Accept: */*
++0.0.8.352 INF <server.cpp:165> Server: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36
++0.0.8.371 INF <server.cpp:165> Server: C: Accept-Encoding: gzip,deflate,sdch
++0.0.8.376 INF <server.cpp:165> Server: C: Accept-Language: en-US,en;q=0.8
++0.0.8.381 INF <server.cpp:180> Server: Read 6 Headers
++0.0.8.385 INF <server.cpp:219> Server: S: HTTP/1.0 404 Not Found
++0.0.8.390 INF <server.cpp:219> Server: S: Server: Coeus 0.3
++0.0.8.395 INF <server.cpp:219> Server: S: Location: http://localhost:8080/favicon.ico
++0.0.8.402 INF <server.cpp:219> Server: S: Content-Type: unknown
++0.0.8.404 INF <server.cpp:219> Server: S: Content-Size: 0
++0.0.8.408 INF <server.cpp:147> Server: Sending File: <html/favicon.ico>
++0.0.8.414 INF <server.cpp:51> Server: Connection from IP Address [127.0.0.1]
++0.0.8.418 INF <server.cpp:53> Server: Socket: 136

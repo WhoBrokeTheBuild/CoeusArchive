@@ -1,0 +1,150 @@
+Type: Statement
+Data: 
+	Type: Variable
+	Data: @x
+	Type: Operator
+	Data: =
+	Type: Number
+	Data: 5
+Type: Statement
+Data: 
+	Type: Command
+	Data: if
+	Type: Parenthesis
+	Data: (@x==5)
+		Type: Statement
+		Data: 
+			Type: Variable
+			Data: @x
+			Type: Operator
+			Data: ==
+			Type: Number
+			Data: 5
+Type: Statement
+Data: 
+	Type: Curly Bracket
+	Data: {out"Hello, World!";}
+		Type: Statement
+		Data: 
+			Type: Command
+			Data: out
+			Type: String
+			Data: "Hello, World!"
+Type: Statement
+Data: 
+	Type: Command
+	Data: for
+	Type: Parenthesis
+	Data: (@i=0;@i<5;@i++)
+		Type: Statement
+		Data: 
+			Type: Variable
+			Data: @i
+			Type: Operator
+			Data: =
+			Type: Number
+			Data: 0
+		Type: Statement
+		Data: 
+			Type: Variable
+			Data: @i
+			Type: Operator
+			Data: <
+			Type: Number
+			Data: 5
+		Type: Statement
+		Data: 
+			Type: Variable
+			Data: @i
+			Type: Operator
+			Data: ++
+Type: Statement
+Data: 
+	Type: Command
+	Data: out
+	Type: String
+	Data: "For Loop #"
+	Type: Operator
+	Data: +
+	Type: Variable
+	Data: @i
+	Type: Operator
+	Data: +
+	Type: String
+	Data: "\n"
+Type: Statement
+Data: 
+	Type: Variable
+	Data: @c
+	Type: Operator
+	Data: =
+	Type: Number
+	Data: 5
+Type: Statement
+Data: 
+	Type: Command
+	Data: while
+	Type: Parenthesis
+	Data: (@c>=0)
+		Type: Statement
+		Data: 
+			Type: Variable
+			Data: @c
+			Type: Operator
+			Data: >=
+			Type: Number
+			Data: 0
+Type: Statement
+Data: 
+	Type: Curly Bracket
+	Data: {out"While Loop #"+@c+"\n";@c--;}
+		Type: Statement
+		Data: 
+			Type: Command
+			Data: out
+			Type: String
+			Data: "While Loop #"
+			Type: Operator
+			Data: +
+			Type: Variable
+			Data: @c
+			Type: Operator
+			Data: +
+			Type: String
+			Data: "\n"
+		Type: Statement
+		Data: 
+			Type: Variable
+			Data: @c
+			Type: Operator
+			Data: --
+Type: Statement
+Data: 
+	Type: Variable
+	Data: @hello
+	Type: Operator
+	Data: =
+	Type: String
+	Data: "Hello"
+Type: Statement
+Data: 
+	Type: Variable
+	Data: @world
+	Type: Operator
+	Data: =
+	Type: String
+	Data: "World"
+Type: Statement
+Data: 
+	Type: Command
+	Data: out
+	Type: Variable
+	Data: @hello
+	Type: Operator
+	Data: +
+	Type: String
+	Data: ", "
+	Type: Operator
+	Data: +
+	Type: Variable
+	Data: @world

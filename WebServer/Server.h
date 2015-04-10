@@ -43,6 +43,8 @@ protected:
 	bool sendFile( std::ifstream& file );
 	void sendDirectoryList( const string& path, const string& realPath );
 
+	void spawnWorker( const unsigned int& socketID );
+
 	ServerConfig*		mp_ServerConfig;
 
 	ServerSocket*		mp_ServerSocket;

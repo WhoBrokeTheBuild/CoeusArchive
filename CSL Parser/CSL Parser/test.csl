@@ -1,0 +1,23 @@
+# Test CSL file
+
+@x = 5;
+
+if (@x == 5)
+{
+    out "Hello, World!";
+}
+
+for (@i = 0; @i < 5; @i++)
+    out "For Loop #" + @i + "\n";
+
+@c = 5;
+while (@c >= 0)
+{
+    out "While Loop #" + @c + "\n";
+    @c--;
+}
+
+@hello = "Hello";
+@world = "World";
+
+out @hello + ", " + @world;
