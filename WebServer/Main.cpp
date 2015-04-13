@@ -5,7 +5,7 @@
 
 #include <Arc/Log.h>
 
-#include "Server.h"
+#include "WebServer.h"
 
 using namespace std;
 using namespace Arc;
@@ -20,7 +20,7 @@ int main( int argc, char* argv[] )
 	Log::AddInfoOutput("logs/info.log");
 	Log::AddErrorOutput("logs/error.log");
 
-	Server server;
+	WebServer server;
 	server.run();
 
 	Log::CloseOutputs();

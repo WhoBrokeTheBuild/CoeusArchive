@@ -7,10 +7,27 @@
     <Filter Include="Project\db">
       <UniqueIdentifier>{b74610e1-2679-48d4-93d5-ef33e42cd1ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Project\Config">
+      <UniqueIdentifier>{00973eb1-ec00-4684-acea-957bcf3a2bd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Util">
+      <UniqueIdentifier>{320ca03f-7008-4833-85ff-fb0cbbacfa63}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Project</Filter>
+    <ClCompile Include="ServerConfig.cpp">
+      <Filter>Project\Util</Filter>
     </ClCompile>
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="conf\main.cfg">
+      <Filter>Project\Config</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ServerConfig.h">
+      <Filter>Project\Util</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

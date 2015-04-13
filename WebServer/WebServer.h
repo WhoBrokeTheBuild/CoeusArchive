@@ -13,13 +13,13 @@ class ServerConfig;
 using namespace std;
 using namespace Arc;
 
-class Server :
+class WebServer :
 	public Arc::ManagedObject
 {
 public:
 
-	Server( void );
-	virtual ~Server( void );
+	WebServer( void );
+	virtual ~WebServer( void );
 
 	virtual inline string getClassName( void ) const { return "Server"; }
 
@@ -45,13 +45,11 @@ protected:
 	bool sendFile( std::ifstream& file );
 	void sendDirectoryList( const string& path, const string& realPath );
 
-	static void spawnWorker( Server* pServer, Socket* pSocket );
+	static void spawnWorker( WebServer* pServer, Socket* pSocket );
 
 	ServerConfig*		mp_ServerConfig;
 
 	ServerSocket*		mp_ServerSocket;
-
-	Socket*				mp_CurrClient;
 
 };
 

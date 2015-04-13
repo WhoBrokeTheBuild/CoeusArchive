@@ -66,7 +66,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Server.cpp" />
+    <ClCompile Include="WebServer.cpp" />
     <ClCompile Include="ServerConfig.cpp" />
     <ClCompile Include="Worker.cpp" />
   </ItemGroup>
@@ -75,7 +75,7 @@
     <None Include="conf\mime.cfg" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Server.h" />
+    <ClInclude Include="WebServer.h" />
     <ClInclude Include="ServerConfig.h" />
     <ClInclude Include="Worker.h" />
   </ItemGroup>

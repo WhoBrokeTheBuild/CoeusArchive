@@ -1,6 +1,6 @@
 #include "Worker.h"
 
-#include "Server.h"
+#include "WebServer.h"
 #include "ServerConfig.h"
 
 Worker::~Worker()

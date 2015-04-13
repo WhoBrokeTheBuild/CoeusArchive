@@ -53,73 +53,14 @@ bool ServerConfig::loadMainConfig( const string& filename )
 			ss << trimData;
 			ss >> m_Port;
 		}
-		else if (command == "webroot")
+		else if (command == "dataroot")
 		{
-			m_WebRoot = trimData;
-		}
-		else if (command == "defaults")
-		{
-			const string& cleanData = cleanWhitespace(data);
-
-			ArrayList<string> defaults = Arc_StringSplit(cleanData, ' ');
-
-			for (unsigned int i = 0; i < defaults.getSize(); ++i)
-				if (defaults[i].length() != 0)
-					m_Defaults.add(defaults[i]);
-		}
-		else if (command == "errorpage404")
-		{
-			m_ErrorPage404 = trimData;
+			m_DataRoot = trimData;
 		}
 	}
 
 	return false;
 }
-
-bool ServerConfig::loadMIMETypes( const string& filename )
-{
-	ifstream file(filename);
-
-	if ( ! file)
-		return false;
-
-	string line;
-	while ( ! file.eof())
-	{
-		getline(file, line);
-
-		if (line.length() != 0 && line[0] == '#')
-			continue;
-
-		const string& newLine = cleanWhitespace(line);
-
-		const ArrayList<string>& pieces = Arc_StringSplit(newLine, ' ');
-
-		if (pieces.getSize() < 2)
-			continue;
-
-		const string& mimeType = pieces[0];
-		m_MimeTypes.add(mimeType, ArrayList<string>());
-		ArrayList<string>& extensions = m_MimeTypes[mimeType];
-		
-		for (unsigned int i = 1; i < pieces.getSize(); ++i)
-			extensions.add(pieces[i]);
-	}
-
-	file.close();
-
-	return true;
-}
-
-string ServerConfig::getMIMEType( const string& extension ) const
-{
-	for (auto it = m_MimeTypes.itConstBegin(); it != m_MimeTypes.itConstEnd(); ++it)
-		if (it->second.contains(extension))
-			return it->first;
-
-	return "unknown";
-}
-
 string ServerConfig::cleanWhitespace( const string& str )
 {
 	string copy = Arc_GetTrim(str);

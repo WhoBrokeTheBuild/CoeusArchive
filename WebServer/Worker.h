@@ -14,13 +14,13 @@
 using namespace std;
 using namespace Arc;
 
-class Server;
+class WebServer;
 
 class Worker :
 	public Arc::ManagedObject
 {
 public:
-	Worker(Server* pServer, Socket* pSocket) :
+	Worker(WebServer* pServer, Socket* pSocket) :
 		mp_CurrClient(pSocket),
 		mp_Server(pServer)
 	{ }
@@ -41,7 +41,7 @@ public:
 protected:
 
 	Socket* mp_CurrClient;
-	Server* mp_Server;
+	WebServer* mp_Server;
 };
 
 #endif // COEUS_WEB_SERVER_WORKER_H

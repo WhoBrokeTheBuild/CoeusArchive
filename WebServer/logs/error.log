@@ -9,3 +9,8 @@
 +0.0.11.899 ERR <server.cpp:60> Server: Malformed Request
 +0.0.25.784 ERR <worker.cpp:204> Worker: Malformed Request
 +0.0.25.785 ERR <worker.cpp:204> Worker: Malformed Request
++0.0.23.614 ERR <worker.cpp:204> Worker: Malformed Request
++0.0.23.615 ERR <worker.cpp:204> Worker: Malformed Request
++0.0.19.134 ERR <worker.cpp:204> Worker: Malformed Request
++0.0.30.944 ERR <worker.cpp:204> Worker: Malformed Request
++0.0.40.69 ERR <worker.cpp:204> Worker: Malformed Request

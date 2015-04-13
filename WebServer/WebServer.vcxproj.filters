@@ -18,10 +18,10 @@
     <ClCompile Include="ServerConfig.cpp">
       <Filter>Project\Util</Filter>
     </ClCompile>
-    <ClCompile Include="Server.cpp">
+    <ClCompile Include="Worker.cpp">
       <Filter>Project</Filter>
     </ClCompile>
-    <ClCompile Include="Worker.cpp">
+    <ClCompile Include="WebServer.cpp">
       <Filter>Project</Filter>
     </ClCompile>
   </ItemGroup>
@@ -37,10 +37,10 @@
     <ClInclude Include="ServerConfig.h">
       <Filter>Project\Util</Filter>
     </ClInclude>
-    <ClInclude Include="Server.h">
+    <ClInclude Include="Worker.h">
       <Filter>Project</Filter>
     </ClInclude>
-    <ClInclude Include="Worker.h">
+    <ClInclude Include="WebServer.h">
       <Filter>Project</Filter>
     </ClInclude>
   </ItemGroup>
