@@ -1,5 +1,5 @@
-#ifndef COEUS_WEB_SERVER_SERVER_H
-#define COEUS_WEB_SERVER_SERVER_H
+#ifndef COEUS_WEB_SERVER_WEB_SERVER_H
+#define COEUS_WEB_SERVER_WEB_SERVER_H
 
 #include <Arc/ManagedObject.h>
 
@@ -53,4 +53,4 @@ protected:
 
 };
 
-#endif // COEUS_WEB_SERVER_SERVER_H
+#endif // COEUS_WEB_SERVER_WEB_SERVER_H

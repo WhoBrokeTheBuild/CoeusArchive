@@ -32,6 +32,7 @@ public:
 
 	Map<string, string> getHeaders();
 	std::streamsize getFileSize(std::ifstream& file);
+
 	string recvLine();
 	bool sendString(const string& str);
 	bool sendLine(const string& line);
@@ -40,8 +41,8 @@ public:
 
 protected:
 
-	Socket* mp_CurrClient;
-	WebServer* mp_Server;
+	Socket*			mp_CurrClient;
+	WebServer*		mp_Server;
 };
 
 #endif // COEUS_WEB_SERVER_WORKER_H

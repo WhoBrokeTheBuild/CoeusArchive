@@ -18,7 +18,13 @@
     <ClCompile Include="ServerConfig.cpp">
       <Filter>Project\Util</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Main.cpp">
+      <Filter>Project</Filter>
+    </ClCompile>
+    <ClCompile Include="SQLServer.cpp">
+      <Filter>Project</Filter>
+    </ClCompile>
+    <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="conf\main.cfg">
@@ -29,5 +35,9 @@
     <ClInclude Include="ServerConfig.h">
       <Filter>Project\Util</Filter>
     </ClInclude>
+    <ClInclude Include="SQLServer.h">
+      <Filter>Project</Filter>
+    </ClInclude>
+    <ClInclude Include="Worker.h" />
   </ItemGroup>
 </Project>

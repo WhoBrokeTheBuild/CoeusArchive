@@ -59,7 +59,7 @@ bool ServerConfig::loadMainConfig( const string& filename )
 		}
 	}
 
-	return false;
+	return true;
 }
 string ServerConfig::cleanWhitespace( const string& str )
 {

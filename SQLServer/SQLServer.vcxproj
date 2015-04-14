@@ -67,12 +67,16 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ServerConfig.cpp" />
+    <ClCompile Include="SQLServer.cpp" />
+    <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="conf\main.cfg" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServerConfig.h" />
+    <ClInclude Include="SQLServer.h" />
+    <ClInclude Include="Worker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

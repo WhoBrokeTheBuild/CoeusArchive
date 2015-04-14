@@ -3028,3 +3028,83 @@ INF <worker.cpp:72> Worker: S: Content-Size: 182
 +0.0.3.888 INF <worker.cpp:72> Worker: S: Content-Size: 215
 +0.0.3.891 INF <worker.cpp:289> Worker: Sending File: <html/linuxbrain/images/layout/content/header.png>
 +0.0.3.892 INF <worker.cpp:289> Worker: Sending File: <html/linuxbrain/images/layout/buttons-bar/button-bar-slice.png>
++0.0.0.120 INF <webserver.cpp:51> Server: Listening on port 8080
++0.0.14.317 INF <webserver.cpp:56> Server: Connection from IP Address [127.0.0.1]
++0.0.14.321 INF <worker.cpp:51> Worker: C: GET / HTTP/1.1
++0.0.14.324 INF <worker.cpp:19> Worker: C: Host: localhost:8080
++0.0.14.326 INF <worker.cpp:19> Worker: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
++0.0.14.333 INF <worker.cpp:19> Worker: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.14.336 INF <worker.cpp:19> Worker: C: Accept-Language: en-US,en;q=0.5
++0.0.14.340 INF <worker.cpp:19> Worker: C: Accept-Encoding: gzip, deflate
++0.0.14.343 INF <worker.cpp:19> Worker: C: Connection: keep-alive
++0.0.14.345 INF <worker.cpp:33> Worker: Read 6 Headers
++0.0.14.347 INF <worker.cpp:72> Worker: S: HTTP/1.0 200 OK
++0.0.14.350 INF <worker.cpp:72> Worker: S: Server: Coeus 0.3
++0.0.14.354 INF <worker.cpp:72> Worker: S: Location: http://localhost:8080/
++0.0.14.364 INF <worker.cpp:72> Worker: S: Content-Type: text/html
++0.0.14.368 INF <worker.cpp:72> Worker: S: Content-Size: 174
++0.0.14.369 INF <worker.cpp:289> Worker: Sending File: <html/index.html>
++0.0.42.250 INF <webserver.cpp:56> Server: Connection from IP Address [127.0.0.1]
++0.0.42.255 INF <worker.cpp:51> Worker: C: GET /test.html HTTP/1.1
++0.0.42.257 INF <worker.cpp:19> Worker: C: Host: localhost:8080
++0.0.42.261 INF <worker.cpp:19> Worker: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
++0.0.42.265 INF <worker.cpp:19> Worker: C: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
++0.0.42.270 INF <worker.cpp:19> Worker: C: Accept-Language: en-US,en;q=0.5
++0.0.42.273 INF <worker.cpp:19> Worker: C: Accept-Encoding: gzip, deflate
++0.0.42.277 INF <worker.cpp:19> Worker: C: Referer: http://localhost:8080/
++0.0.42.280 INF <worker.cpp:19> Worker: C: Connection: keep-alive
++0.0.42.283 INF <worker.cpp:33> Worker: Read 7 Headers
++0.0.42.285 INF <worker.cpp:72> Worker: S: HTTP/1.0 200 OK
++0.0.42.287 INF <worker.cpp:72> Worker: S: Server: Coeus 0.3
++0.0.42.290 INF <worker.cpp:72> Worker: S: Location: http://localhost:8080/test.html
++0.0.42.293 INF <worker.cpp:72> Worker: S: Content-Type: text/html
++0.0.42.297 INF <worker.cpp:72> Worker: S: Content-Size: 182
++0.0.42.298 INF <worker.cpp:289> Worker: Sending File: <html/test.html>
++0.0.42.326 INF <webserver.cpp:56> Server: Connection from IP Address [127.0.0.1]
++0.0.42.332 INF <worker.cpp:51> Worker: C: GET /cat.jpg HTTP/1.1
++0.0.42.333 INF <webserver.cpp:56> Server: Connection from IP Address [127.0.0.1]
++0.0.42.335 INF <worker.cpp:19> Worker: C: Host: localhost:8080
++0.0.42.341 INF <worker.cpp:51> Worker: C: GET /cat.png HTTP/1.1
++0.0.42.341 INF <webserver.cpp:56> Server: Connection from IP Address [127.0.0.1]
++0.0.42.349 INF <worker.cpp:51> Worker: C: GET /cat.gif HTTP/1.1
++0.0.42.353 INF <worker.cpp:19> Worker: C: Host: localhost:8080
++0.0.42.355 INF <worker.cpp:19> Worker: C: Host: localhost:8080
++0.0.42.361 INF <worker.cpp:19> Worker: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
++0.0.42.362 INF <worker.cpp:19> Worker: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
++0.0.42.363 INF <worker.cpp:19> Worker: C: User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0
++0.0.42.368 INF <worker.cpp:19> Worker: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.42.374 INF <worker.cpp:19> Worker: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.42.382 INF <worker.cpp:19> Worker: C: Accept: image/png,image/*;q=0.8,*/*;q=0.5
++0.0.42.386 INF <worker.cpp:19> Worker: C: Accept-Language: en-US,en;q=0.5
++0.0.42.389 INF <worker.cpp:19> Worker: C: Accept-Encoding: gzip, deflate
++0.0.42.393 INF <worker.cpp:19> Worker: C: Accept-Language: en-US,en;q=0.5
++0.0.42.396 INF <worker.cpp:19> Worker: C: Accept-Encoding: gzip, deflate
++0.0.42.400 INF <worker.cpp:19> Worker: C: Referer: http://localhost:8080/test.html
++0.0.42.400 INF <worker.cpp:19> Worker: C: Accept-Language: en-US,en;q=0.5
++0.0.42.402 INF <worker.cpp:19> Worker: C: Referer: http://localhost:8080/test.html
++0.0.42.405 INF <worker.cpp:19> Worker: C: Connection: keep-alive
++0.0.42.409 INF <worker.cpp:19> Worker: C: Accept-Encoding: gzip, deflate
++0.0.42.411 INF <worker.cpp:19> Worker: C: Connection: keep-alive
++0.0.42.415 INF <worker.cpp:19> Worker: C: Referer: http://localhost:8080/test.html
++0.0.42.418 INF <worker.cpp:19> Worker: C: Connection: keep-alive
++0.0.42.421 INF <worker.cpp:33> Worker: Read 7 Headers
++0.0.42.423 INF <worker.cpp:33> Worker: Read 7 Headers
++0.0.42.426 INF <worker.cpp:33> Worker: Read 7 Headers
++0.0.42.429 INF <worker.cpp:72> Worker: S: HTTP/1.0 200 OK
++0.0.42.430 INF <worker.cpp:72> Worker: S: HTTP/1.0 200 OK
++0.0.42.432 INF <worker.cpp:72> Worker: S: Server: Coeus 0.3
++0.0.42.435 INF <worker.cpp:72> Worker: S: HTTP/1.0 200 OK
++0.0.42.437 INF <worker.cpp:72> Worker: S: Server: Coeus 0.3
++0.0.42.439 INF <worker.cpp:72> Worker: S: Server: Coeus 0.3
++0.0.42.442 INF <worker.cpp:72> Worker: S: Location: http://localhost:8080/cat.png
++0.0.42.444 INF <worker.cpp:72> Worker: S: Location: http://localhost:8080/cat.jpg
++0.0.42.457 INF <worker.cpp:72> Worker: S: Location: http://localhost:8080/cat.gif
++0.0.42.458 INF <worker.cpp:72> Worker: S: Content-Type: image/png
++0.0.42.458 INF <worker.cpp:72> Worker: S: Content-Type: image/jpeg
++0.0.42.463 INF <worker.cpp:72> Worker: S: Content-Size: 440374
++0.0.42.465 INF <worker.cpp:289> Worker: Sending File: <html/cat.png>
++0.0.42.479 INF <worker.cpp:72> Worker: S: Content-Size: 10547
++0.0.42.480 INF <worker.cpp:72> Worker: S: Content-Type: image/gif
++0.0.42.483 INF <worker.cpp:289> Worker: Sending File: <html/cat.jpg>
++0.0.42.490 INF <worker.cpp:72> Worker: S: Content-Size: 1047852
++0.0.42.493 INF <worker.cpp:289> Worker: Sending File: <html/cat.gif>

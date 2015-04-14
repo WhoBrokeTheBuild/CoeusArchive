@@ -1,0 +1,20 @@
+%col_type = ( "INT" | "BOOL" | "STRING(" $length ")" )
+%col_attr = ( "UNIQUE" | "PRIMARY KEY" )
+%order_dir = ( "ASC" | "DESC" )
+
+%col_desc = "(" $name:string $type:%col_type [ $attrs:%col_attr ] ")"
+
+%create = "CREATE" ( "DATABASE" $name:string | "TABLE" $name:string $columns:%col_desc:list(",") )
+%drop = "DROP" ( "DATABASE" | "TABLE" )
+%show = "SHOW" ( "DATABASES" | "TABLES" )
+
+%where = "WHERE"
+%oder_by = "ORDER BY" $col_name [ $dir:%order_dir ]
+%limit = "LIMIT" $limit [ "," $offset ]
+
+%select = "SELECT" $what:string:list(",") "FROM" $table:string [ $where:%where ] [ $order_by:%order_by ] [ $limit:%limit ]
+
+%set = $col_name:string "=" $value
+%update = "UPDATE" $table:string "SET" $set%set:list("AND") $where:%where
+
+%delete = "DELETE FROM" $table:string $where:%where
